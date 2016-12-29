@@ -80,7 +80,14 @@ function getCssFiles(files) {
 }
 
 function getJsFiles(files) {
-  let jsFiles = [];
+  let jsFiles = [
+    './public/bower_components/angular/angular.js',
+    './public/bower_components/angular-route/angular-route.js',
+    './public/bower_components/angular-cookies/angular-cookies.js',
+    './public/bower_components/angular-loader/angular-loader.js',
+    './public/bower_components/angular-resource/angular-resource.js',
+    './public/bower_components/angular-sanitize/angular-sanitize.js'
+  ];
 
   return jsFiles.concat(files);
 }

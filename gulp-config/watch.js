@@ -124,8 +124,8 @@ function compileFile(type, path) {
 
   switch (type) {
 
-    case 'js': return gulp.start(['babel', 'lint:fe', 'inject:js:dev', 'inject:css:dev'], reloadBrowser);
-    case 'sass': return gulp.start(['sass', 'inject:css:dev', 'inject:js:dev'], reloadBrowser);
+    case 'js': return gulp.start(['babel', 'lint:fe', 'inject:js:dev'], reloadBrowser);
+    case 'sass': return gulp.start(['sass', 'inject:css:dev'], reloadBrowser);
     case 'jade': {
       if (isLayout(getFileName(path))) return gulp.start(['inject:dev'], reloadBrowser);
       else {
