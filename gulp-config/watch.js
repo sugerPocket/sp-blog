@@ -4,8 +4,9 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const colors = require('colors');
 const nodeInspector = require('gulp-node-inspector');
+const gulpsync = require('gulp-sync')(gulp);
 
-gulp.task('watch', ['watch:fe', 'browser']);
+gulp.task('watch', gulpsync.sync(['watch:fe', 'browser']));
 
 //前端
 gulp.task('watch:fe', function () {
@@ -19,7 +20,7 @@ gulp.task('watch:fe', function () {
     let filetype = getFileType(event.path);
     console.log(colors.blue('File ' + event.type + ': ' + event.path));
 
-    if (event.type === 'changed') {
+    if (event.type == 'changed') {
       compileFile(filetype, event.path);
     } else {
       gulp.start(['inject:dev'], reloadBrowser);

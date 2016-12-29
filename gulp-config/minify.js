@@ -6,8 +6,9 @@ const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const rev = require('gulp-rev');
 const uglify = require('gulp-uglify');
+const gulpsync = require('gulp-sync')(gulp);
 
-gulp.task('minify', ['compile:pro', 'minify:css', 'minify:js']);
+gulp.task('minify', gulpsync.sync(['compile:pro', 'minify:css', 'minify:js']));
 
 /**
  *

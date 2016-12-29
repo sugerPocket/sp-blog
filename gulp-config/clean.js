@@ -2,8 +2,9 @@
 
 const gulp = require('gulp');
 const del = require('del');
+const gulpsync = require('gulp-sync')(gulp);
 
-gulp.task('clean', ['clean:code', 'clean:log']);
+gulp.task('clean', gulpsync.sync(['clean:code', 'clean:log']));
 
 gulp.task('clean:log', function() {
   return del.sync('./*.log');

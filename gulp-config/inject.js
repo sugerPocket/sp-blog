@@ -5,6 +5,8 @@ const inject = require('gulp-inject');
 const jade = require('gulp-jade');
 const fs = require('fs');
 const gulpsync = require('gulp-sync')(gulp);
+const debug = require('gulp-debug');
+const plumber = require('gulp-plumber');
 
 //开发
 gulp.task('inject:dev', gulpsync.sync(['compile:dev', 'inject:css:dev', 'inject:js:dev']));
@@ -24,7 +26,7 @@ gulp.task('inject:js:dev', function() {
 });
 
 //正式
-gulp.task('inject:pro', ['minify', 'inject:css:pro', 'inject:js:pro']);
+gulp.task('inject:pro', gulpsync.sync(['minify', 'inject:css:pro', 'inject:js:pro']));
 
 gulp.task('inject:css:pro', function() {
 
@@ -51,8 +53,7 @@ function startInject(files) {
   let target = null;
   if (!indexExisted()) {
     target = gulp.src('./views/index.jade')
-      .pipe(jade())
-      .pipe(gulp.dest('./views/'));
+      .pipe(jade());
   } else {
     target = gulp.src('./views/index.html');
   }
@@ -61,14 +62,15 @@ function startInject(files) {
   let options = {
     transform(filepath) {
       if (filepath.substr(0, 7) === '/public') {
-        filepath = filepath.substr(7);
+        arguments[0] = filepath.substr(7);
       }
       // Use the default transform as fallback:
       return inject.transform.apply(inject.transform, arguments);
     }
   };
 
-  return target.pipe(inject(sources, options))
+  return target
+    .pipe(inject(sources, options))
     .pipe(gulp.dest('./views/'));
 
 }

@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index');
+  res.sendfile('/index.html', {root : __dirname.substr(0, __dirname.lastIndexOf('/')) + '/views'});
 };
 
 exports.partials = function (req, res) {

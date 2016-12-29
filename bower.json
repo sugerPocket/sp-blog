@@ -1,0 +1,26 @@
+{
+  "name": "sp-blog",
+  "description": "\"simple angular-express blog\"",
+  "main": "app.js",
+  "authors": [
+    "邓廷礼 <937169359@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sugerPocket/sp-blog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-loader": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-sanitize": "^1.6.1"
+  }
+}

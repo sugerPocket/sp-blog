@@ -3,14 +3,15 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
+const gulpsync = require('gulp-sync')(gulp);
 
 /*
 * 编译文件
 */
 
-gulp.task('compile:pro', ['clean:code', 'sass', 'babel']);
+gulp.task('compile:pro', gulpsync.sync(['clean:code', 'sass', 'babel']));
 
-gulp.task('compile:dev', ['clean:code', 'lint', 'sass', 'babel']);
+gulp.task('compile:dev', gulpsync.sync(['clean:code', 'lint', 'sass', 'babel']));
 
 gulp.task('sass', function () {
   return gulp.src('./blog-fe/**/*.sass')
