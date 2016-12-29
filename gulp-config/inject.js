@@ -5,8 +5,6 @@ const inject = require('gulp-inject');
 const jade = require('gulp-jade');
 const fs = require('fs');
 const gulpsync = require('gulp-sync')(gulp);
-const debug = require('gulp-debug');
-const plumber = require('gulp-plumber');
 
 //开发
 gulp.task('inject:dev', gulpsync.sync(['compile:dev', 'inject:css:dev', 'inject:js:dev']));
