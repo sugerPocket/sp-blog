@@ -1,7 +1,9 @@
 extends layout
 
 block body
-  div
+  ng-include(src="'/includes/self-side-menu'")
+  div.sp-content(ng-class="{'expanded': contentExpanded}")
+    ng-include(src="'/includes/self-header-menu'")
     h2 My Blog
     ul
       li

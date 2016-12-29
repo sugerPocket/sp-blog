@@ -1,0 +1,40 @@
+.sp-side-menu {
+  background: #0ebeff;
+  position: fixed;
+  box-shadow: 0 0 5px #888;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 100%;
+}
+
+.sp-side-menu.expanded {
+  width: 220px;
+}
+
+.sp-side-menu.expanded .sp-side-telescopic-state-ctrl:before {
+  content: "\2770" !important;
+}
+
+.sp-side-menu .sp-side-header {
+  background: #009fda;
+  box-shadow: 0 0 5px #888;
+  height: 64px;
+}
+
+.sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl {
+  height: 100%;
+  color: #333333;
+  line-height: 64px;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 0 10px #888;
+}
+
+.sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl:before {
+  content: "\2771";
+}
+
+.sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl:hover {
+  cursor: pointer;
+}

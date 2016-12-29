@@ -1,0 +1,5 @@
+header.sp-header-menu(ng-controller="sp-header-menu as vm")
+  nav.sp-navigator
+    ul.sp-tags-wrapper
+      li.sp-tag-wrapper(ng-repeat="tag in vm.tags track by $index" ng-click="vm.toggleFirstState($event, tag.name)" ng-class="{'active': tag.active}")
+        h3.sp-tagname {{tag.name}}

@@ -1,0 +1,29 @@
+.sp-side-menu
+  background: #0ebeff
+  position: fixed
+  box-shadow: 0 0 5px #888
+  top: 0
+  left: 0
+  width: 64px
+  height: 100%
+
+  &.expanded
+    width: 220px
+    .sp-side-telescopic-state-ctrl:before
+      content: "\2770" !important
+
+  .sp-side-header
+    background: darken(#0ebeff, 10%)
+    box-shadow: 0 0 5px #888
+    height: 64px
+    .sp-side-telescopic-state-ctrl
+      height: 100%
+      color: lighten(black, 20%)
+      line-height: 64px
+      font-size: 2.5rem
+      text-align: center
+      text-shadow: 0 0 10px #888
+      &:before
+        content: "\2771"
+      &:hover
+        cursor: pointer
