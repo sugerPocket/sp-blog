@@ -38,9 +38,9 @@ bower_components
 .node_repl_history
 
 # images
-.jpeg
-.jpg
-.png
+*.jpeg
+*.jpg
+*.png
 
 #vscode
 .vscode
