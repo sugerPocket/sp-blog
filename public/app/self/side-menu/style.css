@@ -6,6 +6,7 @@
   left: 0;
   width: 64px;
   height: 100%;
+  transition: all 0.5s;
 }
 
 .sp-side-menu.expanded {
@@ -37,4 +38,29 @@
 
 .sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl:hover {
   cursor: pointer;
+}
+
+.sp-side-menu .sp-side-user-profile {
+  text-align: center;
+}
+
+.sp-side-menu .sp-side-user-profile .sp-side-user-minihead-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 80%;
+  margin-top: 20px;
+  text-align: left;
+  border-radius: 50%;
+  background: #007aa7;
+  box-shadow: 0 0 10px #007aa7;
+}
+
+.sp-side-menu .sp-side-user-profile .sp-side-user-minihead-wrapper .sp-side-user-minihead {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  width: 95%;
 }

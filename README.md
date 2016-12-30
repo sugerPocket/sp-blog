@@ -12,3 +12,4 @@ Based on the [Angular Express Seed](https://github.com/btford/angular-express-se
 ## Log
 * 2016-12-28：完成环境搭建，期末来临，暂停开发
 * 2016-12-29: 修正部分gulp的bug，完成 side-menu + header-menu 的基本框架
+* 2016-12-30: 完成前端用户头像显示

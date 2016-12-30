@@ -86,7 +86,8 @@ function getJsFiles(files) {
     './public/bower_components/angular-cookies/angular-cookies.js',
     './public/bower_components/angular-loader/angular-loader.js',
     './public/bower_components/angular-resource/angular-resource.js',
-    './public/bower_components/angular-sanitize/angular-sanitize.js'
+    './public/bower_components/angular-sanitize/angular-sanitize.js',
+    './public/bower_components/angular-animate/angular-animate.js'
   ];
 
   return jsFiles.concat(files);

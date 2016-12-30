@@ -1,11 +1,14 @@
+$sp-blue: #0ebeff
+
 .sp-side-menu
-  background: #0ebeff
+  background: $sp-blue
   position: fixed
   box-shadow: 0 0 5px #888
   top: 0
   left: 0
   width: 64px
   height: 100%
+  transition: all 0.5s
 
   &.expanded
     width: 220px
@@ -13,7 +16,7 @@
       content: "\2770" !important
 
   .sp-side-header
-    background: darken(#0ebeff, 10%)
+    background: darken($sp-blue, 10%)
     box-shadow: 0 0 5px #888
     height: 64px
     .sp-side-telescopic-state-ctrl
@@ -27,3 +30,23 @@
         content: "\2771"
       &:hover
         cursor: pointer
+  .sp-side-user-profile
+    text-align: center
+    .sp-side-user-minihead-wrapper
+      position: relative
+      width: 80%
+      margin: 0 auto
+      padding-bottom: 80%
+      margin-top: 20px
+      text-align: left
+      border-radius: 50%
+      background: darken($sp-blue, 20%)
+      box-shadow: 0 0 10px darken($sp-blue, 20%)
+      .sp-side-user-minihead
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        position: absolute
+        border-radius: 50%
+        width: 95%
+        

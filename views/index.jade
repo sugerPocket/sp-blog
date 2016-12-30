@@ -2,13 +2,6 @@ extends layout
 
 block body
   ng-include(src="'/includes/self-side-menu'")
-  div.sp-content(ng-class="{'expanded': contentExpanded}")
+  .sp-content(ng-class="{'expanded': contentExpanded}")
     ng-include(src="'/includes/self-header-menu'")
-    h2 My Blog
-    ul
-      li
-        a(href='/') Home
-      li
-        a(href='/addPost') Add a new post
-
-    div(ng-view)
+    .sp-main(ng-view)

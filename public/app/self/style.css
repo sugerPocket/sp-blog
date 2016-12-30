@@ -23,6 +23,7 @@ a {
 .sp-content {
   color: green;
   margin-left: 220px;
+  transition: all 0.5s;
 }
 
 .sp-content.expanded {
