@@ -2,6 +2,5 @@ extends layout
 
 block body
   ng-include(src="'/includes/self-side-menu'")
-  .sp-content(ng-class="{'expanded': contentExpanded}")
-    ng-include(src="'/includes/self-header-menu'")
-    .sp-main(ng-view)
+  .sp-content#sp-content(ng-class="{'expanded': contentExpanded}")
+    section(ui-view)

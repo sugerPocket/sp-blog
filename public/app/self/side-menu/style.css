@@ -1,66 +1,32 @@
-.sp-side-menu {
-  background: #0ebeff;
+#sp-side-menu {
   position: fixed;
-  box-shadow: 0 0 5px #888;
   top: 0;
   left: 0;
-  width: 64px;
+  width: 200px;
   height: 100%;
-  transition: all 0.5s;
+  background: #2e2e2e;
 }
 
-.sp-side-menu.expanded {
-  width: 220px;
+#sp-side-menu .sp-side-menu-header {
+  font-size: 20px;
+  color: #8e8e8e;
+  width: 100%;
+  height: 60px;
+  padding: 20px 20px 0 20px;
 }
 
-.sp-side-menu.expanded .sp-side-telescopic-state-ctrl:before {
-  content: "\2770" !important;
+#sp-side-menu .sp-side-menu-avatar {
+  height: 40px;
+  width: 40px;
+  background: #8e8e8e;
+  float: left;
 }
 
-.sp-side-menu .sp-side-header {
-  background: #009fda;
-  box-shadow: 0 0 5px #888;
-  height: 64px;
+#sp-side-menu .sp-side-menu-flex-ctrl {
+  float: right;
 }
 
-.sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl {
-  height: 100%;
-  color: #333333;
-  line-height: 64px;
-  font-size: 2.5rem;
-  text-align: center;
-  text-shadow: 0 0 10px #888;
-}
-
-.sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl:before {
-  content: "\2771";
-}
-
-.sp-side-menu .sp-side-header .sp-side-telescopic-state-ctrl:hover {
-  cursor: pointer;
-}
-
-.sp-side-menu .sp-side-user-profile {
-  text-align: center;
-}
-
-.sp-side-menu .sp-side-user-profile .sp-side-user-minihead-wrapper {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 80%;
-  margin-top: 20px;
-  text-align: left;
-  border-radius: 50%;
-  background: #007aa7;
-  box-shadow: 0 0 10px #007aa7;
-}
-
-.sp-side-menu .sp-side-user-profile .sp-side-user-minihead-wrapper .sp-side-user-minihead {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  border-radius: 50%;
-  width: 95%;
+#sp-side-menu .sp-side-menu-flex-ctrl > span {
+  height: 40px;
+  line-height: 40px;
 }

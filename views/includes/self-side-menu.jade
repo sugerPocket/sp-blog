@@ -1,8 +1,10 @@
-.sp-side-menu(ng-controller="sp-side-menu as vm" ng-class="{'expanded': vm.expanded}")
-  header.sp-side-header
-    .sp-side-logo-wrapper
-    .sp-side-telescopic-state-ctrl(ng-click="vm.toggleTelescopicState($event)")
-  .sp-side-user-profile
-    .sp-side-user-minihead-wrapper
-      //img.sp-side-user-minihead(src="/header.jpeg")
-  .sp-side-user-ctrl
+.sp-side-menu-container#sp-side-menu
+  .sp-side-menu-wrapper
+    .sp-side-menu-header
+      .sp-side-menu-avatar
+      .sp-side-menu-flex-ctrl
+        span.glyphicon.glyphicon-chevron-left
+    .sp-side-menu-body
+      .sp-side-menu-content
+      .sp-side-menu-main
+    .sp-side-menu-footer

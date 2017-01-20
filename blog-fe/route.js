@@ -1,31 +1,30 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['ngAnimate', 'ngRoute', 'myApp.filters', 'myApp.services', 'myApp.directives']).
-  config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $routeProvider.
-      when('/', {
-        templateUrl: 'partials/index',
+angular.module('myApp', ['ui.router', 'myApp.filters', 'myApp.services', 'myApp.directives']).
+  config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
+    $stateProvider.
+      state('home', {
+        url: '/home',
+        templateUrl: 'includes/home',
         controller: IndexCtrl
       }).
-      when('/addPost', {
+      state('addPost', {
         templateUrl: 'partials/addPost',
         controller: AddPostCtrl
       }).
-      when('/readPost/:id', {
+      state('/readPost/:id', {
         templateUrl: 'partials/readPost',
         controller: ReadPostCtrl
       }).
-      when('/editPost/:id', {
+      state('/editPost/:id', {
         templateUrl: 'partials/editPost',
         controller: EditPostCtrl
       }).
-      when('/deletePost/:id', {
+      state('/deletePost/:id', {
         templateUrl: 'partials/deletePost',
         controller: DeletePostCtrl
-      }).
-      otherwise({
-        redirectTo: '/'
       });
+    $urlRouterProvider.otherwise('home');
     $locationProvider.html5Mode(true);
   }]);

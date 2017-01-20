@@ -1,52 +1,32 @@
-$sp-blue: #0ebeff
+$sp-blue1: #04477c
+$sp-blue2: #065fb9
+$sp-blue3: #049ff1
+$sp-blue4: #70E1FF
+$sp-blue5: #cbf3fb
+$sp-black1: #2e2e2e
+$sp-black2: #3f3f3f
+$sp-black3: #8e8e8e
 
-.sp-side-menu
-  background: $sp-blue
+#sp-side-menu
   position: fixed
-  box-shadow: 0 0 5px #888
   top: 0
   left: 0
-  width: 64px
+  width: 200px
   height: 100%
-  transition: all 0.5s
-
-  &.expanded
-    width: 220px
-    .sp-side-telescopic-state-ctrl:before
-      content: "\2770" !important
-
-  .sp-side-header
-    background: darken($sp-blue, 10%)
-    box-shadow: 0 0 5px #888
-    height: 64px
-    .sp-side-telescopic-state-ctrl
-      height: 100%
-      color: lighten(black, 20%)
-      line-height: 64px
-      font-size: 2.5rem
-      text-align: center
-      text-shadow: 0 0 10px #888
-      &:before
-        content: "\2771"
-      &:hover
-        cursor: pointer
-  .sp-side-user-profile
-    text-align: center
-    .sp-side-user-minihead-wrapper
-      position: relative
-      width: 80%
-      margin: 0 auto
-      padding-bottom: 80%
-      margin-top: 20px
-      text-align: left
-      border-radius: 50%
-      background: darken($sp-blue, 20%)
-      box-shadow: 0 0 10px darken($sp-blue, 20%)
-      .sp-side-user-minihead
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-        position: absolute
-        border-radius: 50%
-        width: 95%
-        
+  background: $sp-black1
+  .sp-side-menu-header
+    font-size: 20px
+    color: $sp-black3
+    width: 100%
+    height: 60px
+    padding: 20px 20px 0 20px
+  .sp-side-menu-avatar
+    height: 40px
+    width: 40px
+    background: $sp-black3
+    float: left
+  .sp-side-menu-flex-ctrl
+    float: right
+    &>span
+      height: 40px
+      line-height: 40px
