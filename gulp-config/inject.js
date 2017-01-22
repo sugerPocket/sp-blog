@@ -75,8 +75,8 @@ function startInject(files) {
 
 function getCssFiles(files) {
   let cssFiles = [
-    './public/bower_components/angular-bootstrap/bootstrap.min.css',
-    './public/bower_components/angular-bootstrap/ui-bootstrap-csp.css'
+    './public/bower_components/bootstrap/dist/bootstrap.min.css',
+    './public/bower_components/bootstrap/dist/bootstrap-theme.min.css'
   ];
 
   return cssFiles.concat(files);
@@ -91,8 +91,8 @@ function getJsFiles(files) {
     './public/bower_components/angular-resource/angular-resource.js',
     './public/bower_components/angular-sanitize/angular-sanitize.js',
     './public/bower_components/angular-animate/angular-animate.js',
-    './public/bower_components/angular-bootstrap/ui-bootstrap.js',
-    './public/bower_components/angular-bootstrap/bootstrap.js',
+    './public/bower_components/jquery/dist/jquery.js',
+    './public/bower_components/bootstrap/dist/js/bootstrap.js',
     './public/bower_components/angular-ui-router/release/angular-ui-router.js'
   ];
 

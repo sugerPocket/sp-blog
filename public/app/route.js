@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', ['ui.bootstrap', 'ui.router', 'myApp.filters', 'myApp.services', 'myApp.directives']).config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
+angular.module('myApp', ['ui.router', 'myApp.filters', 'myApp.services', 'myApp.directives']).config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: '/',
     templateUrl: 'includes/home'
