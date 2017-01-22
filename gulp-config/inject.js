@@ -74,7 +74,10 @@ function startInject(files) {
 }
 
 function getCssFiles(files) {
-  let cssFiles = [];
+  let cssFiles = [
+    './public/bower_components/angular-bootstrap/bootstrap.min.css',
+    './public/bower_components/angular-bootstrap/ui-bootstrap-csp.css'
+  ];
 
   return cssFiles.concat(files);
 }
@@ -89,6 +92,7 @@ function getJsFiles(files) {
     './public/bower_components/angular-sanitize/angular-sanitize.js',
     './public/bower_components/angular-animate/angular-animate.js',
     './public/bower_components/angular-bootstrap/ui-bootstrap.js',
+    './public/bower_components/angular-bootstrap/bootstrap.js',
     './public/bower_components/angular-ui-router/release/angular-ui-router.js'
   ];
 

@@ -4,22 +4,17 @@
 
 angular.module('myApp', ['ui.bootstrap', 'ui.router', 'myApp.filters', 'myApp.services', 'myApp.directives']).config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
-    url: '/home',
-    templateUrl: 'includes/home',
-    controller: IndexCtrl
+    url: '/',
+    templateUrl: 'includes/home'
   }).state('addPost', {
-    templateUrl: 'partials/addPost',
-    controller: AddPostCtrl
+    templateUrl: 'partials/addPost'
   }).state('/readPost/:id', {
-    templateUrl: 'partials/readPost',
-    controller: ReadPostCtrl
+    templateUrl: 'partials/readPost'
   }).state('/editPost/:id', {
-    templateUrl: 'partials/editPost',
-    controller: EditPostCtrl
+    templateUrl: 'partials/editPost'
   }).state('/deletePost/:id', {
-    templateUrl: 'partials/deletePost',
-    controller: DeletePostCtrl
+    templateUrl: 'partials/deletePost'
   });
-  $urlRouterProvider.otherwise('home');
+  $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode(true);
 }]);
