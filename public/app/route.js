@@ -5,7 +5,7 @@
 angular.module('myApp', ['ui.router', 'myApp.filters', 'myApp.services', 'myApp.directives']).config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: '/home',
-    templateUrl: 'includes/home.html',
+    templateUrl: 'includes/home',
     controller: IndexCtrl
   }).state('addPost', {
     templateUrl: 'partials/addPost',

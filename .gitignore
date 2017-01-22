@@ -42,5 +42,8 @@ bower_components
 *.jpg
 *.png
 
+#app
+app
+
 #vscode
 .vscode
