@@ -22,6 +22,17 @@
   float: left;
 }
 
+#sp-side-menu .sp-side-menu-user-ctrl {
+  margin: 10px 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #065fb9;
+}
+
+#sp-side-menu .sp-side-menu-user-ctrl button {
+  margin-top: 10px;
+  width: 100%;
+}
+
 #sp-side-menu .sp-side-menu-flex-ctrl {
   float: right;
 }

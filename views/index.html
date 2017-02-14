@@ -1,10 +1,11 @@
 <!DOCTYPE html><html ng-app="myApp"><head><meta charset="utf8"><base href="/"><title>Angular Express Seed App</title><!-- inject:css -->
 <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="/app/app.css">
 <link rel="stylesheet" href="/app/self/style.css">
+<link rel="stylesheet" href="/app/self/log-in/style.css">
+<link rel="stylesheet" href="/app/self/register/style.css">
 <link rel="stylesheet" href="/app/self/side-menu/style.css">
-<!-- endinject --></head><body><ng-include src="'/includes/self-side-menu'"></ng-include><div id="sp-content" ng-class="{'expanded': contentExpanded}" class="sp-content"><section ui-view></section></div></body><!-- inject:js -->
+<!-- endinject --></head><body><ng-include src="'/includes/self-side-menu'"></ng-include><ng-include src="'./includes/log-in'"></ng-include><div id="sp-content" ng-class="{'expanded': contentExpanded}" class="sp-content"><section ui-view></section></div></body><!-- inject:js -->
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/bower_components/angular-route/angular-route.js"></script>
 <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
@@ -21,5 +22,7 @@
 <script src="/app/route.js"></script>
 <script src="/app/services.js"></script>
 <script src="/app/self/self.js"></script>
+<script src="/app/self/log-in/controller.js"></script>
+<script src="/app/self/register/controller.js"></script>
 <script src="/app/self/side-menu/controller.js"></script>
 <!-- endinject --></html>

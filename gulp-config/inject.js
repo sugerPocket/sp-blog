@@ -75,8 +75,7 @@ function startInject(files) {
 
 function getCssFiles(files) {
   let cssFiles = [
-    './public/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    './public/bower_components/bootstrap/dist/css/bootstrap-theme.min.css'
+    './public/bower_components/bootstrap/dist/css/bootstrap.min.css'
   ];
 
   return cssFiles.concat(files);

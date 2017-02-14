@@ -8,4 +8,6 @@ let userSchema = new Schema({
   password: String
 });
 
-module.exports = userSchema;
+let userModel = mongoose.model('user', userSchema);
+
+module.exports = userModel;

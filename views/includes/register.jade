@@ -1,0 +1,19 @@
+.sp-register-container#sp-register(ng-controller='registerCtrl as vm')
+  .sp-register-wrapper
+    .sp-register-header
+      span Welcome to sugerpocket
+    .sp-register-body
+      h2.sp-register-title 注册
+      .sp-register-form-wrapper
+        form#sp-register-form
+          input(type='text' name='username' placeholder='用户名(由)')
+          label.warning-box(for='username') username
+          input(type='password' name='password' placeholder='password')
+          label.warning-box(for='password') password
+          input(type='password' name='passwordCopy' placeholder='retype password')
+          label.warning-box(for='passwordCopy') text
+          input(type='email' name='email' placeholder='邮箱')
+          label.warning-box(for='email') email
+          input(type='submit' placeholder='注册')
+          input(type='reset' placeholder='重置')
+    .sp-register-footer

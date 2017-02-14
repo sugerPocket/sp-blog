@@ -1,0 +1,63 @@
+$sp-blue1: #04477c
+$sp-blue2: #065fb9
+$sp-blue3: #049ff1
+$sp-blue4: #70E1FF
+$sp-blue5: #cbf3fb
+$sp-black1: #2e2e2e
+$sp-black2: #3f3f3f
+$sp-black3: #8e8e8e
+
+#sp-register
+  .sp-register-header
+    border-left: 1px solid $sp-black3
+    background: $sp-black1
+    height: 80px
+    color: white
+    text-align: center
+    font-size: 40px
+    line-height: 80px
+  
+  .sp-register-body
+    position: relative
+    text-align: center
+  
+  .sp-register-title
+    margin: 30px auto 0 auto
+
+  .sp-register-form-wrapper
+    position: absolute
+    left: 50%
+    margin-top: 30px
+    transform: translateX(-50%)
+    width: 100%
+    text-align: center
+
+  #sp-register-form
+    text-align: left
+    width: 400px
+    margin: 0 auto
+    display: inline-block
+    input
+      border: 1px solid #dfdfdf
+      height: 40px
+      font-size: 12px
+      width: 395px
+      float: left
+      border-radius: 3px
+      padding: 10px
+      color: #a5a5a5
+      outline: 0
+    label.warning-box
+      width: 395px
+      line-height: 30px
+      height: 30px
+      margin-bottom: 5px
+      &.valid
+        color: limegreen
+      &.invalid
+        color: red
+  
+  .sp-resgiter-footer
+    min-height: 600px
+    width: 100%
+    background-color: #f6f9fa

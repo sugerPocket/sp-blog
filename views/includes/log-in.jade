@@ -1,0 +1,19 @@
+.sp-login-container#sp-login(ng-controller='logInCtrl as vm')
+  .sp-login-wrapper
+    .modal.fade#logInModal(tabindex='-1' role='dialog' aria-labelledby="Log In" aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+            h2.modal-title#logInModalLabel Log In
+          .modal-body
+            form.container#login-form
+              label.rows.input-rows(for='username')
+                h5.glyphicon.glyphicon-user.col-md-2.col-sm-2.col-xs-2.col-lg-2
+                input.login-input.col-md-10.col-sm-10.col-xs-10.col-lg-10(name='username' ng-model='vm.username' placeholder='username')
+              label.rows.input-rows(for='password')
+                h5.glyphicon.glyphicon-lock.col-md-2.col-sm-2.col-xs-2.col-lg-2
+                input.login-input.col-md-10.col-sm-10.col-xs-10.col-lg-10(type='password' name='password' ng-model='vm.password' placeholder='password')
+          .modal-footer
+            button.btn.btn-default(type='reset' ng-click='vm.reset()') 重置
+            button.btn.btn-primary(type='button' ng-click='vm.login()') 提交
