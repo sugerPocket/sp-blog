@@ -1,12 +1,15 @@
 <!DOCTYPE html><html ng-app="sugerpocket"><head><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta charset="utf8"><link rel="shortcut icon" href="/images/Logo.png" type="image/x-icon"><base href="/"><title>sugerpocket</title><!-- inject:css -->
 <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bower_components/angular-markdown-editor/dist/angular-markdown-editor.min.css">
+<link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css">
 <link rel="stylesheet" href="/app/app.css">
+<link rel="stylesheet" href="/app/assignment/assignment.css">
 <link rel="stylesheet" href="/app/blog/blog.css">
 <link rel="stylesheet" href="/app/self/style.css">
+<link rel="stylesheet" href="/app/assignment/list/style.css">
 <link rel="stylesheet" href="/app/blog/list/style.css">
 <link rel="stylesheet" href="/app/self/auth/style.css">
 <link rel="stylesheet" href="/app/self/header/style.css">
-<link rel="stylesheet" href="/app/assignment/list/style.css">
 <link rel="stylesheet" href="/app/self/side-menu/style.css">
 <!-- endinject --></head><body><ng-include src="'/includes/side-menu'"></ng-include><ng-include src="'/includes/header'"></ng-include><ng-include src="'/includes/auth'"></ng-include><div id="sp-content" ng-class="{&quot;explanded&quot;: contentExpanded}" class="sp-content"><section ui-view class="test"></section></div></body><!-- inject:js -->
 <script src="/bower_components/angular/angular.js"></script>
@@ -26,8 +29,8 @@
 <script src="/app/assignment/configs/router.js"></script>
 <script src="/app/assignment/list/controller.js"></script>
 <script src="/app/assignment/self/controller.js"></script>
-<script src="/app/blog/list/controller.js"></script>
 <script src="/app/blog/configs/router.js"></script>
+<script src="/app/blog/list/controller.js"></script>
 <script src="/app/blog/self/controller.js"></script>
 <script src="/app/self/auth/controller.js"></script>
 <script src="/app/self/configs/router.js"></script>

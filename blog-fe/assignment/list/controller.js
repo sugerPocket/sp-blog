@@ -21,7 +21,13 @@
     function initResource() {}
 
     //////////////初始化变量
-    function initVariable() {}
+    function initVariable() {
+      vm.editorOpts = {};
+      vm.editorContent = '# test';
+      $scope.$watch('editorContent', function (newVal, oldVal) {
+        console.log(newVal);
+      });
+    }
 
     //////////////使用参数初始化变量
     function initParamsVariable() {}
