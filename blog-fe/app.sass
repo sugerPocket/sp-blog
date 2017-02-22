@@ -7,6 +7,9 @@ ul
   margin: 0
   padding: 0
 
+body
+  position: relative
+
 ul,
 li
   list-style: none
@@ -15,4 +18,9 @@ a
   text-decoration: none
 
 #sp-content
-  margin-left: 200px
+  text-align: center
+  transform: translate3d(-115px, 0, 0)
+  transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1)
+  &.explanded
+    transform: translate3d(0, 0, 0)
+  

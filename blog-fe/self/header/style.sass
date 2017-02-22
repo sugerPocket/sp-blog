@@ -1,0 +1,66 @@
+#sp-header
+
+  .navbar
+    transition: all 0.5s
+    background-color: white
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+  .container
+    position: relative
+    transition: all 0.5s
+    @media (min-width: 1280px)
+      transform: translate3d(-115px, 0, 0)
+    @media (max-width: 1280px)
+      transform: translate3d(-230px, 0, 0)
+    &.explanded
+      transform: translate3d(0, 0, 0)
+  
+  .navbar-header
+    float: none
+    position: relative
+  
+  .navbar-toggle
+    display: inline-block
+    margin-left: 15px
+    margin-right: 15px
+
+  .sp-navbar-button
+    outline: none
+    transition: all 0.5s
+    padding: 7px
+    color: #888
+    border: none
+    border-radius: 0px
+    background: transparent
+
+  .dropdown-menu
+    left: 0
+    right: auto
+    min-width: 100px
+  
+  .btn-group
+    margin: 7px 5px
+    font-size: 14px
+    float: right
+  .glyphicon
+    margin-right: 10px
+  .navbar-toggle
+    background: none !important
+  
+  .sp-side-ctrl
+    border: none
+  
+  .navbar-transparent
+    padding-top: 15px
+    background: transparent
+    border-color: transparent
+
+    .navbar-brand
+      color: white
+    
+    .sp-navbar-button
+      color: white
+      border-color: white
+    
+    .sp-side-ctrl > .icon-bar
+      background-color: white

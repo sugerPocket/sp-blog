@@ -1,0 +1,22 @@
+#sp-auth.sp-auth-container.modal.fade(role='dialog' aria-labelledby='sugerPocketAuth' aria-hidden='true')
+  .sp-auth-wrapper.modal-dialog
+    .modal-content
+      .auth-panel
+        .auth-panel-decoration.hidden-xs.col-sm-6.col-md-6.col-lg-6
+        .auth-panel-content.pull-right.col-xs-12.col-sm-6.col-md-6.col-lg-6
+          button.close(type='button' data-dismiss='modal' data-target='#sp-auth' aria-hidden='true') &times;
+          .modal-header
+            .auth-toggle-group
+              a.auth-toggle.pull-left.active(type='button') SIGN IN
+              a.auth-toggle.pull-left(type='button') SIGN UP
+            img.img-responsive.logo(src='images/Logo.png')
+          .modal-body
+            form(role='form')
+              .form-group
+                label.control-label.auth-label.glyphicon.glyphicon-user
+                input.form-control(type='text' placeholder='Username')
+              .form-group
+                label.control-label.auth-label.glyphicon.glyphicon-lock
+                input.form-control(type='password' placeholder='Password')
+              .sign-in-submit
+                button.btn.submit Done!

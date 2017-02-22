@@ -1,0 +1,17 @@
+#sp-side-menu.sp-side-container(ng-controller='sideMenuCtrl as vm' ng-class='{"expanded": vm.expanded}')
+  .sp-side-wrapper
+    .sp-side-header
+    .sp-side-body
+      ul.list-group
+        li.list-group-item(ng-class='{ "active": vm.activeTab === "home"}')
+          a.list-link
+            span.item-text Home
+        li.list-group-item(ng-class='{ "active": vm.activeTab === "blog"}')
+          a.list-link(ui-sref='blog')
+            span.item-text Blog
+        li.list-group-item(ng-class='{ "active": vm.activeTab === "assignment"}')
+          a.list-link(ui-sref='assignment')
+            span.item-text Assignments
+        li.list-group-item(ng-class='{ "active": vm.activeTab === "todo"}')
+          a.list-link
+            span.item-text Todo

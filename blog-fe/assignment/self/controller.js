@@ -3,12 +3,12 @@
 (function() {
 
   angular
-    .module('myApp')
-    .controller('Ctrl', Ctrl);
+    .module('sugerpocket.assignment')
+    .controller('assignmentCtrl', assignmentCtrl);
 
-  Ctrl.$inject = ['$scope'];
+  assignmentCtrl.$inject = ['$scope', '$state'];
 
-  function Ctrl($scope) {
+  function assignmentCtrl($scope, $state) {
     const vm = this;
 
     activate();
@@ -35,5 +35,7 @@
       initParamsVariable();
       initWatchEvent();
     }
+
+    $state.go('assignment.list');
   }
 })();

@@ -1,0 +1,38 @@
+#sp-blog
+  .blog-head
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      height: 100%
+      width: 100%
+      opacity: 0.2
+      background: #000
+  .blog-head-content
+    position: absolute
+    width: 100%
+    top: 50%
+    transform: translateY(-50%)
+    color: white
+    text-align: left
+    h1
+      font-weight: bold
+      text-align: center
+      @media (min-width: 992px)
+        font-size: 96px
+      @media (max-width: 992px)
+        font-size: 60px
+      @media (max-width: 762px)
+        font-size: 25px
+    h2
+      margin-top: 0px
+      text-align: center
+      @media (min-width: 992px)
+        font-size: 56px
+      @media (max-width: 992px)
+        font-size: 32px
+      @media (max-width: 762px)
+        font-size: 16px
+    hr
+      float: none

@@ -1,0 +1,23 @@
+#sp-header.sp-header-container(ng-controller='headerCtrl as vm')
+  .sp-header-wrapper
+    nav.navbar.navbar-default.navbar-fixed-top(role='navigation' ng-class='{ "navbar-transparent": vm.navTransparent }')
+      .container(ng-class='{ "explanded": vm.explanded }')
+        .navbar-header
+          a.navbar-brand SugerPocket
+          button.sp-side-ctrl.navbar-toggle.collapse(ng-click='vm.toggleSideMenu()')
+            span.sr-only side menu toggle
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          .btn-group.navbar-right
+            button.btn.sp-navbar-button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              span.glyphicon.glyphicon-user
+              span.caret
+            ul.dropdown-menu(role='menu' aria-labelledby="authMenu")
+              li.dropdown-header(role="presentation") Auth
+              li
+                a(href='#' data-toggle='modal' data-target='#sp-auth') Sign in
+              li
+                a(href='#') Sign up 
+            
+            

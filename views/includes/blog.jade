@@ -1,0 +1,9 @@
+#sp-blog.sp-blog-container(ng-controller='blogCtrl as vm')
+  .sp-blog-wrapper
+    .blog-head
+      img.parallax.img-responsive(ng-src='/images/blog-header.jpg' style='width: 100%; z-index: -1;')
+      .blog-head-content
+        h1 The Sugerpocket Blog
+        hr.col-xs-6.col-md-4.col-sm-2.col-lg-2
+        h2 The world is more beautiful because of javascript
+    ui-view

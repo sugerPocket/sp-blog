@@ -1,14 +1,12 @@
 'use strict';
 
 (function() {
-
   angular
-    .module('myApp')
-    .controller('Ctrl', Ctrl);
-
-  Ctrl.$inject = ['$scope'];
-
-  function Ctrl($scope) {
+    .module('sugerpocket.blog')
+    .controller('blogCtrl', blogCtrl);
+  
+  blogCtrl.$inject = ['$scope', '$state'];
+  function blogCtrl($scope, $state) {
     const vm = this;
 
     activate();
@@ -27,7 +25,12 @@
     function initParamsVariable() {}
 
     //////////////添加各种watch
-    function initWatchEvent() {}
+    function initWatchEvent() {
+      $scope.$emit('addHeaderScroll');
+      $scope.$on('$destroy', function() {
+        $scope.$emit('removeHeaderScroll');
+      });
+    }
 
     function activate() {
       initVariable();
@@ -35,5 +38,7 @@
       initParamsVariable();
       initWatchEvent();
     }
+
+    $state.go('blog.list');
   }
 })();

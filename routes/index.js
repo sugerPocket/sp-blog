@@ -8,6 +8,7 @@ router.get(/^((?!includes).)*$/, function(req, res, next) {
 
 router.get('/includes/:name', function (req, res) {
   let name = req.params.name;
+  name += '.jade';
   res.render('includes/' + name);
 });
 
