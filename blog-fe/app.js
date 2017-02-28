@@ -6,6 +6,8 @@ angular
   .module('sugerpocket', [
     'ngResource',
     'ui.router',
+    'ngSanitize',
+    'yaru22.md',
     'sugerpocket.blog',
     'sugerpocket.assignment'
   ]);

@@ -12,5 +12,16 @@ angular
         .state('assignment.list', {
           url: '/list',
           templateUrl: 'includes/assignment.list'
+        })
+        .state('assignment.new', {
+          url: '/new',
+          templateUrl: 'includes/assignment.new'
         });
+
+      function goDefault($state) {
+        $state.go('assignment.list');
+      }
+
+      $urlRouterProvider.when('/assignment', ['$state', goDefault]);
+      $urlRouterProvider.when('/assignment/', ['$state', goDefault]);
     }]);

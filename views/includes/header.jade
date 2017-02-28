@@ -16,8 +16,8 @@
             ul.dropdown-menu(role='menu' aria-labelledby="authMenu")
               li.dropdown-header(role="presentation") Auth
               li
-                a(href='#' data-toggle='modal' data-target='#sp-auth') Sign in
+                a(href='#' ng-click='vm.openAuthModal("login")' data-toggle='modal' data-target='#sp-auth') Sign in
               li
-                a(href='#') Sign up 
+                a(href='#' ng-click='vm.openAuthModal("register")' data-toggle='modal' data-target='#sp-auth') Sign up 
             
             

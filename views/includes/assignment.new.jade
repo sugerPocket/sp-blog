@@ -1,0 +1,17 @@
+#sp-assignment-new.sp-assignment-new-container(ng-controller='newAssignmentCtrl as vm')
+  .sp-assignment-new-wrapper
+    .new-assignment-header
+    .new-assignment-body
+      form.form-inline.editor.pull-left(role='form')
+        label.control-label.title-label Title
+        input.form-control(name='title' ng-model='vm.title')
+        label.control-label.type-label Type
+        select.form-control(ng-model='vm.assignmentType' name='type')
+          option(ng-repeat='name in vm.assignmentTypes track by $index') {{name}}
+        label.control-label.week-label Week
+        select.form-control(ng-model='vm.week' name='week')
+          option(ng-repeat='name in vm.weeks track by $index') {{name}}
+        textarea(sp-mde ng-model='vm.assignmentContent' on-load='vm.configEditorSize()')  
+      .preview.pull-left
+        h1.new-assignment-title {{vm.title}}
+        md(ng-model='vm.assignmentContent')

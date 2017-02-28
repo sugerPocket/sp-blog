@@ -1,4 +1,4 @@
-#sp-auth.sp-auth-container.modal.fade(role='dialog' aria-labelledby='sugerPocketAuth' aria-hidden='true')
+#sp-auth.sp-auth-container.modal.fade(role='dialog' aria-labelledby='sugerPocketAuth' aria-hidden='true' ng-controller='authCtrl as vm')
   .sp-auth-wrapper.modal-dialog
     .modal-content
       .auth-panel
@@ -7,16 +7,38 @@
           button.close(type='button' data-dismiss='modal' data-target='#sp-auth' aria-hidden='true') &times;
           .modal-header
             .auth-toggle-group
-              a.auth-toggle.pull-left.active(type='button') SIGN IN
-              a.auth-toggle.pull-left(type='button') SIGN UP
-            img.img-responsive.logo(src='images/Logo.png')
+              a.auth-toggle.pull-left(ng-click='vm.toggleTab("login")' ng-class='{"active": vm.activeTab === "login"}' type='button') SIGN IN
+              a.auth-toggle.pull-left(ng-click='vm.toggleTab("register")' ng-class='{"active": vm.activeTab === "register"}' type='button') SIGN UP
           .modal-body
-            form(role='form')
-              .form-group
-                label.control-label.auth-label.glyphicon.glyphicon-user
-                input.form-control(type='text' placeholder='Username')
-              .form-group
-                label.control-label.auth-label.glyphicon.glyphicon-lock
-                input.form-control(type='password' placeholder='Password')
-              .sign-in-submit
-                button.btn.submit Done!
+            .auth-form-wrapper
+              .auth-form(ng-class='{"login": vm.activeTab === "login", "register": vm.activeTab === "register"}')
+                .login-area.pull-left
+                  img.img-responsive.logo(src='images/Logo.png')
+                  form(role='form')
+                    .form-group
+                      label.control-label.auth-label.glyphicon.glyphicon-user
+                      input.form-control(type='text' placeholder='Username' ng-model='vm.username')
+                    .form-group
+                      label.control-label.auth-label.glyphicon.glyphicon-lock
+                      input.form-control(type='password' placeholder='Password' ng-model='vm.password')
+                    .sign-in-submit
+                      button.btn.submit Done!
+                .register-area.pull-left
+                  form(role='form')
+                    .form-group
+                      label.control-label.auth-label Username
+                      input.form-control(type='text' ng-model='vm.username')
+                    .form-group
+                      label.control-label.auth-label E-mail
+                      input.form-control(type='email' ng-model='vm.email')
+                    .form-group
+                      label.control-label.auth-label Nickname
+                      input.form-control(type='text' ng-model='vm.nickname')
+                    .form-group
+                      label.control-label.auth-label Password
+                      input.form-control(type='password' ng-model='vm.password')
+                    .form-group
+                      label.control-label.auth-label Identifying code
+                      input.form-control.identifying-code-control(type='text' ng-model='vm.identifyingCode')
+                    .sign-up-submit
+                      button.btn.submit Join us!

@@ -35,7 +35,5 @@
       initParamsVariable();
       initWatchEvent();
     }
-
-    $state.go('assignment.list');
   }
 })();

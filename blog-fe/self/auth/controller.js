@@ -6,65 +6,125 @@
     .module('sugerpocket')
     .controller('authCtrl', authCtrl);
 
-  authCtrl.$inject = ['$scope', '$resource', '$stateParams'];
+  authCtrl.$inject = ['$scope', '$resource', '$stateParams', '$rootScope'];
 
-  function authCtrl($scope, $resource, $stateParams) {
+  function authCtrl($scope, $resource, $stateParams, $rootScope) {
     const vm = this;
 
     activate();
 
     ///////////////工具函数
-    function logInOneUser() {
+    function loginOneUser() {
       let username = vm.username;
       let password = vm.password;
       let data = {
         username,
         password
       };
+
       let success = (result) => {
         console.log(result);
       };
 
-      vm.api.logIn.save(data, (result) => {
-        if (result.status === 'OK') success(result);
-        else console.log(result);
-      });
+      let error = (err) => {
+        console.log(err);
+      };
+
+      let promise = vm.api.login.save(data);
+      promise
+        .then((result) => {
+          if (result.status === 'OK') success(result);
+          else console.log(result);
+        })
+        .catch((err) => {
+          error(err);
+        });
+      
+    }
+
+    function registerOneUsr() {
+      let username = vm.username;
+      let password = vm.password;
+      let email = vm.email;
+      let nickname = vm.nickname;
+      let data = {
+        username,
+        password,
+        nickname,
+        email
+      };
+
+      let success = (result) => {
+        console.log(result);
+      };
+
+      let error = (err) => {
+        console.log(err);
+      };
+
+      let promise = vm.api.register.save(data);
+
+      promise
+        .then((result) => {
+          if (result.status === 'OK') success(result);
+          else console.log(result);
+        })
+        .catch((err) => {
+          error(err);
+        });
+
     }
 
     function reset() {
       vm.username = '';
       vm.password = '';
+      vm.email = '';
+      vm.nickname = '';
+    }
+
+    function toggleTab(name) {
+      let tabArr = ['login', 'register'];
+      if (tabArr.indexOf(name) !== -1) {
+        reset();
+        if (name !== vm.activeTab) vm.activeTab = name;
+      }
+    }
+
+    function openAuthModal(name) {
+      reset();
+      toggleTab(name);
     }
 
     //////////////事件处理
     vm.login = () => loginOneUser();
     vm.reset = () => reset();
+    vm.toggleTab = (name) => toggleTab(name);
 
     //////////////资源
     function initResource() {
       vm.api = {};
-      vm.api.logIn = $resource('/api/users/logIn');
+      vm.api.login = $resource('/api/users/login');
       vm.api.register = $resource('/api/users/register');
     }
     //////////////初始化变量
     function initVariable() {
       vm.username = '';
       vm.password = '';
+      vm.nickname = '';
       vm.activeTab = 'register';
     }
 
     //////////////使用参数初始化变量
     function initParamsVariable() {
-      if ($stateParams.action !== 'register' && $stateParams.action !== 'logIn') {
-        throw new Error('$state params error!(action is neither "register" nor "logIn")');
-        return;
-      }
-
-      vm.activeTab = $stateParams.action;
+      
     }
 
     //////////////添加各种watch
-    function initWatchEvent() {}
+    function initWatchEvent() {
+      $rootScope.$on('auth:open', function ($event, params) {
+        openAuthModal(params.name);
+      });
+    }
 
     function activate() {
       initVariable();

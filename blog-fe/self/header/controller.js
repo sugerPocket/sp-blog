@@ -47,6 +47,12 @@
       $rootScope.$broadcast('toggleSideMenu');
     };
 
+    vm.openAuthModal = (name) => {
+      $scope.$emit('auth:open', {
+        name
+      });
+    };
+
     //////////////资源
     function initResource() {}
 

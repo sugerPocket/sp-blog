@@ -76,8 +76,9 @@ function startInject(files) {
 function getCssFiles(files) {
   let cssFiles = [
     './public/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    './public/bower_components/angular-markdown-editor/dist/angular-markdown-editor.min.css',
-    './public/bower_components/codemirror/lib/codemirror.css'
+    './public/bower_components/codemirror/lib/codemirror.css',
+    './public/bower_components/simplemde/dist/simplemde.min.css',
+    './public/bower_components/highlight/src/styles/default.css'
   ];
 
   return cssFiles.concat(files);
@@ -95,8 +96,12 @@ function getJsFiles(files) {
     './public/bower_components/jquery/dist/jquery.js',
     './public/bower_components/bootstrap/dist/js/bootstrap.js',
     './public/bower_components/codemirror/lib/codemirror.js',
+    './public/bower_components/simplemde/dist/simplemde.min.js',
+    './public/bower_components/marked/lib/marked.js',
     './public/bower_components/angular-ui-router/release/angular-ui-router.js',
-    './public/bower_components/angular-markdown-editor/dist/angular-markdown-editor.min.js'
+    './public/bower_components/angular-md/dist/angular-md.min.js',
+    './public/bower_components/angular-mocks/angular-mocks.js',
+    './public/bower_components/highlight/src/highlight.js'
   ];
 
   return jsFiles.concat(files);

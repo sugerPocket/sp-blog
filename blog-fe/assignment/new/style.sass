@@ -1,0 +1,48 @@
+#sp-assignment-new
+  text-align: left
+  .new-assignment-header
+    height: 50px
+    background: #aaa
+  .new-assignment-body
+    overflow: hidden
+  .new-assignment-title
+    font-size: 42px
+  .editor
+    @media (min-width: 767px)
+      width: 50%
+    @media (max-width: 767px)
+      width: 100%
+    .control-label
+      text-align: center
+      font-size: 18px
+      height: 40px
+      line-height: 40px
+      background: #ccc
+      color: white
+    .form-control
+      height: 40px
+      font-size: 18px
+      border-radius: 0
+      outline: none
+      box-shadow: none
+    .form-control[name=title]
+      width: 90%
+    .title-label
+      width: 10%
+    .type-label, .week-label
+      width: 10%
+    .form-control[name=type], .form-control[name=week]
+      width: 40%
+    .editor-toolbar
+      border-radius: 0
+    .CodeMirror
+      border-radius: 0
+      height: 733px
+  .preview
+    height: 895px
+    @media (min-width: 767px)
+      width: 50%
+    @media (max-width: 767px)
+      width: 100%
+    padding: 40px
+    background: rgb(252, 250, 242) 

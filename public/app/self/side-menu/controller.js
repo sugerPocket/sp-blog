@@ -13,10 +13,6 @@
     ///////////////工具函数
 
     //////////////事件处理
-    vm.goRegister = function () {
-      console.log('call go resgister');
-      $state.go('register');
-    };
 
     //////////////资源
     function initResource() {}

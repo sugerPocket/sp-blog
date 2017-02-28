@@ -20,7 +20,6 @@
     overflow: hidden
   .auth-toggle-group
     overflow: hidden
-    margin-bottom: 30px
   .auth-toggle
     color: #bbc
     font-size: 14px
@@ -30,25 +29,70 @@
     padding: 0
     background: none
     border-bottom: 2px solid transparent
+    transition: all 0.5s
     &.active
       color: #df0086
       border-color: #df0086
     &:nth-child(1)
       margin-right: 20px
   .logo
-    margin: 0 auto
+    margin: 0 auto 30px auto
     height: 100px
-  .form-group
-    position: relative
+  .modal-body
+    text-align: center
+  .auth-form-wrapper
+    width: 100%
+    margin: 0 auto
+    overflow: hidden
+  .auth-form
+    width: 200%
+    overflow: hidden
+    transition: all 0.5s
+  .auth-form.login
+    .register-area
+      transform: translateX(30px)
+  .auth-form.register
+    .login-area
+      transform: translateX(-30px)
+    transform: translateX(-50%)
+  .login-area, .register-area
+    width: 50%
+    transition: all 0.5s
+  .login-area
+    margin-top: 50px
+    .form-group
+      position: relative
+    .form-control
+      padding-left: 48px
+      height: 40px
+    .auth-label
+      font-size: 16px
+      position: absolute
+      top: 12px
+      left: 15px
+  .register-area
+    text-align: left
+    .form-group
+      overflow: hidden
+    .form-control
+      border-radius: 0
+      border: none
+      font-size: 14px
+      color: #aaa
+      height: 26px
+      outline: none
+      border-bottom: 2px solid #df0086
+      box-shadow: none
+      padding-left: 0
+      padding-right: 0
+    .auth-label
+      color: #df0086
+    .sign-up-submit
+      text-align: center
   .auth-label
     color: #df0086
-    font-size: 16px
-    position: absolute
-    top: 12px
-    left: 15px
-  .form-control
-    padding-left: 48px
-    height: 40px
+  .identifying-code-control
+    width: 50%
   .submit
     color: white
     background-color: #df0086
