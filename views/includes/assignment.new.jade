@@ -1,6 +1,32 @@
 #sp-assignment-new.sp-assignment-new-container(ng-controller='newAssignmentCtrl as vm')
   .sp-assignment-new-wrapper
+    #file-entry-config.modal.fade(data-backdrop="" aria-labelledby="modalLabel" tabindex="-1" aria-hidden='true' role='dialog')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+            h2.modal-title#modalLabel File Entry Config
+          .modal-body
+            form(role='form')
+              .checkbox
+                label
+                  input(type='checkbox' ng-model='vm.fileEntry.allowable')
+                  span add a file entry?
+              .form-group
+                label.control-label(for='size') Max Size
+                input.form-control(ng-disabled='!vm.fileEntry.allowable' name='size' type='number' ng-model='vm.fileEntry.maxSize')
+                label.control-label MB
+              .form-group
+                label.control-label RegExp
+                input.form-control(ng-disabled='!vm.fileEntry.allowable' type='text' ng-model='vm.fileEntry.nameRegExp')
+          .modal-footer
+            button.btn.btn-primary(type='button' data-dismiss='modal') Ok!
     .new-assignment-header
+      .new-assignment-toolbar.pull-left
+        a(href='#' data-toggle='modal' data-target='#file-entry-config').fa.fa-file
+      .new-assignment-ctrls.pull-right
+        a(href='#') Publish
+        a(href='#') Return
     .new-assignment-body
       form.form-inline.editor.pull-left(role='form')
         label.control-label.title-label Title
