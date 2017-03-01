@@ -37,7 +37,10 @@
         label.control-label.week-label Week
         select.form-control(ng-model='vm.week' name='week')
           option(ng-repeat='name in vm.weeks track by $index') {{name}}
-        textarea(sp-mde ng-model='vm.assignmentContent' on-load='vm.configEditorSize()')  
+        label.control-label.ddl-label DDL
+        .input-group.date
+          input.datepicker.form-control(type="text" value="12-02-2012")
+        textarea(sp-mde ng-model='vm.assignmentContent' on-load='vm.configEditorSize()')
       .preview.pull-left
         h1.new-assignment-title {{vm.title}}
         md(ng-model='vm.assignmentContent')
