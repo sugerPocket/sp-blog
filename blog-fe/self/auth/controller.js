@@ -30,7 +30,7 @@
         console.log(err);
       };
 
-      let promise = vm.api.login.save(data);
+      let promise = vm.api.login.save(data).$promise;
       promise
         .then((result) => {
           if (result.status === 'OK') success(result);
@@ -62,7 +62,7 @@
         console.log(err);
       };
 
-      let promise = vm.api.register.save(data);
+      let promise = vm.api.register.save(data).$promise;
 
       promise
         .then((result) => {
@@ -97,14 +97,15 @@
 
     //////////////事件处理
     vm.login = () => loginOneUser();
+    vm.register = () => registerOneUsr();
     vm.reset = () => reset();
     vm.toggleTab = (name) => toggleTab(name);
 
     //////////////资源
     function initResource() {
       vm.api = {};
-      vm.api.login = $resource('/api/users/login');
-      vm.api.register = $resource('/api/users/register');
+      vm.api.login = $resource('/auth/login');
+      vm.api.register = $resource('/auth/register');
     }
     //////////////初始化变量
     function initVariable() {

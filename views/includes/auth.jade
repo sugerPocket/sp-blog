@@ -22,7 +22,7 @@
                       label.control-label.auth-label.glyphicon.glyphicon-lock
                       input.form-control(type='password' placeholder='Password' ng-model='vm.password')
                     .sign-in-submit
-                      button.btn.submit Done!
+                      button.btn.submit(ng-click='vm.login()') Done!
                 .register-area.pull-left
                   form(role='form')
                     .form-group
@@ -41,4 +41,4 @@
                       label.control-label.auth-label Identifying code
                       input.form-control.identifying-code-control(type='text' ng-model='vm.identifyingCode')
                     .sign-up-submit
-                      button.btn.submit Join us!
+                      button.btn.submit(ng-click='vm.register()') Join us!

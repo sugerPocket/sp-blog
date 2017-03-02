@@ -1,0 +1,22 @@
+#sp-one-assignment.one-assignment-container.container(ng-controller='oneAssignmentCtrl as vm')
+  .one-assignment-wrapper
+    #file-entry.modal.fade(role="dialog" data-backdrop="" aria-labelledby="myModalLabel" aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button" data-dismiss="modal" aria-hidden="true") &times;
+            h2.modal-title#myModalLabel File Entry
+          .modal-body
+
+          .modal-footer
+            button.btn.btn-default(type="button" class="btn btn-default" data-dismiss="modal") Close
+            button.btn.btn-primary(type="button" class="btn btn-primary") Submit
+    .one-assignment-content
+      h1 Test
+      hr
+      md
+    hr
+    .one-assignment-footer.clearfix
+      .btn-group.pull-right
+        button.btn.btn-primary(data-toggle="modal" data-target="#file-entry") File Entry
+    

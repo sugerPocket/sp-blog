@@ -9,11 +9,12 @@
               h4.title.pull-left test
               h6.week.pull-right Week 1
             .list-item-img
+              img.img-responsive(ng-src='/images/blog-header.jpg')
+              a.assignment-link(ui-sref='assignment.one({assignmentId: 1})' href='#')
             .author-meta
-              img.img-responsive.minihead(ng-src='/images/blog-header.jpg')
+              img.img-responsive.minihead(ng-src='/images/header.jpeg')
               span.author-name sugerpocket
             .ddl.clearfix
               h5.start.pull-left start at
               h5.end.pull-right End at 
     .assignment-list-footer
-      textarea(sp-mde ng-model='vm.editorContent')

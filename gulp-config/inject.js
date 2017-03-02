@@ -75,8 +75,8 @@ function startInject(files) {
 
 function getCssFiles(files) {
   let cssFiles = [
-    './public/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    './public/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
+    './public/bower_components/bootstrap/dist/css/bootstrap.css',
+    './public/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
     './public/bower_components/codemirror/lib/codemirror.css',
     './public/bower_components/simplemde/dist/simplemde.min.css',
     './public/bower_components/highlight/src/styles/default.css'
@@ -94,9 +94,10 @@ function getJsFiles(files) {
     './public/bower_components/angular-resource/angular-resource.js',
     './public/bower_components/angular-sanitize/angular-sanitize.js',
     './public/bower_components/angular-animate/angular-animate.js',
-    './public/bower_components/jquery/dist/jquery.js',
+    './public/bower_components/jquery/dist/jquery.min.js',
     './public/bower_components/bootstrap/dist/js/bootstrap.js',
-    './public/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
+    './public/bower_components/moment/min/moment.min.js',
+    './public/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
     './public/bower_components/codemirror/lib/codemirror.js',
     './public/bower_components/simplemde/dist/simplemde.min.js',
     './public/bower_components/marked/lib/marked.js',

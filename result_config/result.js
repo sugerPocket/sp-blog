@@ -2,8 +2,8 @@
 function resultModel() {
   this.status = 'OK';
   this.data = {};
-  this.userData = {
-    'role': 'ordinary user'
+  this.userMeta = {
+    'role': true
   };
   this.msg = '';
   return this;

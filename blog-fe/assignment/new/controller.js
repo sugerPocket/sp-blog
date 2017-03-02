@@ -67,11 +67,18 @@
       };
     }
 
+    //////////////初始化Dom
+    function initDom() {
+      let picker = $('#sp-assignment-new .datepicker');
+      picker.datetimepicker({});
+    }
+
     function activate() {
       initVariable();
       initResource();
       initParamsVariable();
       initWatchEvent();
+      initDom();
     }
   }
 })();

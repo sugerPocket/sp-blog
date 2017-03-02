@@ -5,11 +5,18 @@ ul {
 }
 
 body {
-  position: relative;
+  background: url(/images/background.jpg);
+  background-repeat: repeat;
 }
 
 a {
   text-decoration: none;
+}
+
+.picker-switch a {
+  padding: 3px 20px;
+  height: 20px;
+  width: 100%;
 }
 
 #sp-content {

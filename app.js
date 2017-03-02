@@ -8,6 +8,10 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
+var auth = require('./routes/auth');
+var user = require('./routes/api/user');
+var blog = require('./routes/api/blog');
+var assignment = require('./routes/api/assignment');
 
 var app = express();
 
@@ -26,11 +30,15 @@ app.use(session({
   resave: true, // don't save session if unmodified  
   saveUninitialized: false, // don't create session until something stored
   cookie: { maxAge: 300000 },
-  secret: 'sugerpocket express app'
+  secret: 'sugerpocket'
 }));
 
 app.use('/', index);
+app.use('/auth', auth);
 app.use('/api', api);
+app.use('/api/user', user);
+app.use('/api/assignment', assignment);
+app.use('/api/blog', blog);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -22,12 +22,15 @@
       display: inline-block
   .new-assignment-body
     overflow: hidden
+    background: #fff
   .new-assignment-title
     font-size: 42px
   .editor
     @media (min-width: 767px)
       width: 50%
     @media (max-width: 767px)
+      width: 100%
+    .form-group
       width: 100%
     .control-label
       text-align: center
@@ -44,12 +47,12 @@
       box-shadow: none
     .form-control[name=title]
       width: 90%
-    .title-label
-      width: 10%
-    .type-label, .week-label
+    .control-label
       width: 10%
     .form-control[name=type], .form-control[name=week]
       width: 40%
+    .date.datepicker
+      width: 90%
     .editor-toolbar
       border-radius: 0
     .CodeMirror

@@ -16,6 +16,10 @@ angular
         .state('assignment.new', {
           url: '/new',
           templateUrl: 'includes/assignment.new'
+        })
+        .state('assignment.one', {
+          url: '/:assignmentId',
+          templateUrl: 'includes/assignment.one'
         });
 
       function goDefault($state) {
