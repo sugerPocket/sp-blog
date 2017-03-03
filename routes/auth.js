@@ -53,6 +53,7 @@ userMethods.login = (req) => {
             result.userMeta.username = docs[0]._doc.username;
             result.userMeta.nickname = docs[0]._doc.nickname;
             result.userMeta.role = docs[0]._doc.role;
+            result.userMeta.uid = docs[0]._doc._id;
             resolve(result);
           }
           else {
@@ -83,6 +84,12 @@ userMethods.register = (req) => {
     return Promise.reject(result);
   }
 
+  if (data.identifyingCode !== '2468') {
+    result.status = 'BAD_DATA';
+    result.msg = '验证码不正确';
+    return Promise.reject(result);
+  }
+  
   data.password = md5(data.password);
   data.role = 1;
 
@@ -125,7 +132,7 @@ userMethods.register = (req) => {
 
     yield new Promise((resolve, reject) => {
       let newUser = new db.user(data);
-      newUser.save(err => {
+      newUser.save((err, doc) => {
         if (err) {
           result.status = 'DATABASE_ERROR';
           result.msg = '数据库出现未知错误';
@@ -144,6 +151,20 @@ userMethods.register = (req) => {
 
     return result;
   });
+};
+
+userMethods.init = (req) => {
+  let result = new resultModel();
+  if (req.session.userMeta) {
+    result.userMeta = req.session.userMeta;
+    result.status = 'OK';
+    result.msg = '用户登陆成功';
+    return Promise.resolve(result);
+  }
+  else {
+    result.status = 'AUTHENTICATION_ERROR';
+    return Promise.reject(result);
+  }
 };
 
 router.post('/:command', (req, res, next) => {

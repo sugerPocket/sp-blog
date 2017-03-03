@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let blogSchema = new Schema({
-  id: Number,
   title: String,
-  authorname: String,
+  promulgatorId: String,
   comments: [{
     body: String,
     date: Date,
-    authorname: String,
+    promulgatorId: String,
     hidden: Boolean
   }],
   date: {

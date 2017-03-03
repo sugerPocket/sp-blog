@@ -36,6 +36,18 @@
       };
     }
 
+    function handleLogin(data) {
+      if (data.username && data.nickname) {
+        vm.isLogin = true;
+        vm.nickname = data.nickname;
+      }
+    }
+
+    function handleLogout() {
+      vm.isLogin = false;
+      vm.nickname = '';
+    }
+
     function removeScrollEvent() {
       vm.navTransparent = false;
       $window.onscroll = null;
@@ -53,11 +65,19 @@
       });
     };
 
+    vm.logout = () => {
+      vm.isLogin = false;
+      vm.nickname = '';
+      $scope.$emit('logout');
+    };
+
     //////////////资源
     function initResource() {}
 
     //////////////初始化变量
     function initVariable() {
+      vm.isLogin = false;
+      vm.nickname = '';
       vm.explanded = true;
       vm.navTransparent = false;
     }
@@ -69,6 +89,8 @@
     function initWatchEvent() {
       $rootScope.$on('removeHeaderScroll', removeScrollEvent);
       $rootScope.$on('addHeaderScroll', initScrollEvent);
+      $rootScope.$on('login', ($event, data) => handleLogin(data));
+      $rootScope.$on('logout', handleLogout);
     }
 
     function activate() {

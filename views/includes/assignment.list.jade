@@ -3,18 +3,18 @@
     .assignment-list-header
     .assignment-list-body
       .assignment-list.row
-        .list-item-wrapper.col-xs-12.col-md-4.col-sm-6
+        .list-item-wrapper.col-xs-12.col-md-4.col-sm-6(ng-repeat='assignment in vm.assignmentsList')
           .list-item
             .list-item-meta.clearfix
-              h4.title.pull-left test
-              h6.week.pull-right Week 1
+              h4.title.pull-left {{ assignment.title }} 
+              h6.week.pull-right Week {{ assignment.week }}
             .list-item-img
               img.img-responsive(ng-src='/images/blog-header.jpg')
-              a.assignment-link(ui-sref='assignment.one({assignmentId: 1})' href='#')
+              a.assignment-link(ui-sref='assignment.one({ assignmentId: assignment.aid })' href='#')
             .author-meta
               img.img-responsive.minihead(ng-src='/images/header.jpeg')
-              span.author-name sugerpocket
+              span.author-name {{ assignment.promulgatorMeta.nickname }}
             .ddl.clearfix
-              h5.start.pull-left start at
-              h5.end.pull-right End at 
+              h5.start.pull-left start: {{ assignment.start | date: 'yyyy/MM/dd HH:mm' }}
+              h5.end.pull-right End at {{ assignment.ddl | date: 'yyyy/MM/dd HH:mm' }}
     .assignment-list-footer

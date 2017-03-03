@@ -31,6 +31,8 @@
     "codemirror": "^5.24.2",
     "jquery": "^1.9.1",
     "bootstrap": "^3.3.7",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "angular-file-upload": "^2.5.0",
+    "angular-ui-notification": "^0.3.5"
   }
 }

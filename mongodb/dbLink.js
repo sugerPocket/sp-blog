@@ -3,7 +3,7 @@ const userModel = require('./models/user');
 const blogModel = require('./models/blog');
 const assignmentModel = require('./models/assignment');
 
-mongoose.connect('mongodb://127.0.0.1/sp-blog');
+mongoose.connect('mongodb://127.0.0.1/sugerpocket');
 
 let db = {};
 db.instance = mongoose;

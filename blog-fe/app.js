@@ -9,5 +9,7 @@ angular
     'ngSanitize',
     'yaru22.md',
     'sugerpocket.blog',
-    'sugerpocket.assignment'
+    'sugerpocket.assignment',
+    'angularFileUpload',
+    'ui-notification'
   ]);

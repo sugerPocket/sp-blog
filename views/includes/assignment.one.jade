@@ -1,22 +1,47 @@
 #sp-one-assignment.one-assignment-container.container(ng-controller='oneAssignmentCtrl as vm')
   .one-assignment-wrapper
-    #file-entry.modal.fade(role="dialog" data-backdrop="" aria-labelledby="myModalLabel" aria-hidden="true")
-      .modal-dialog
-        .modal-content
-          .modal-header
-            button.close(type="button" data-dismiss="modal" aria-hidden="true") &times;
-            h2.modal-title#myModalLabel File Entry
-          .modal-body
-
-          .modal-footer
-            button.btn.btn-default(type="button" class="btn btn-default" data-dismiss="modal") Close
-            button.btn.btn-primary(type="button" class="btn btn-primary") Submit
     .one-assignment-content
-      h1 Test
+      h1(style='min-height: 40px') {{ vm.title }}
       hr
-      md
-    hr
-    .one-assignment-footer.clearfix
-      .btn-group.pull-right
-        button.btn.btn-primary(data-toggle="modal" data-target="#file-entry") File Entry
+      md(ng-model='vm.content')
+    .one-assignment-footer.clearfix(ng-if='vm.fileEntry.allowable')
+      h2 File Entry
+      table.table
+        thead
+          tr
+            th(style='width: 50%') Name
+            th Size
+            th Progress
+            th Status
+            th Actions
+        tbody
+          tr(ng-repeat='item in vm.uploader.queue')
+            td
+              i.fa.fa-file
+              strong {{ item.file.name }}
+            td {{ item.file.size/1024/1024 | number:2 }} MB
+            td
+              .progress
+                .progress-bar(role='progressbar' ng-style="{ 'width': item.progress + '%'}")
+            td
+              span(ng-show="item.isSuccess")
+                i.glyphicon.glyphicon-ok
+              span(ng-show="item.isCancel")
+                i.glyphicon.glyphicon-ban-circle
+              span(ng-show="item.isError")
+                i.glyphicon.glyphicon-remove
+            td.btn-group
+              button.btn.btn-success.btn-xs(ng-click='item.upload()')
+                span.glyphicon.glyphicon-upload
+                |Upload
+              button.btn.btn-warning.btn-xs(ng-click='item.cancel()')
+                span.glyphicon.glyphicon-ban-circle
+                |Cancel
+              button.btn.btn-danger.btn-xs(ng-click='item.remove()')
+                span.glyphicon.glyphicon-trash
+                |Remove
+      .btn-group.pull-left
+        button.btn.btn-primary.btn-md.uploader
+          span Add
+          input(uploader='vm.uploader' nv-file-select type='file' ng-model='vm.tFilePath')
     

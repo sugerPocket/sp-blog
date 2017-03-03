@@ -2,19 +2,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let assignmentSchema = new Schema({
-  id: Number,
   title: String,
   content: String,
-  ddl: String,
+  start: {
+    type: Date,
+    default: Date.now
+  },
+  ddl: {
+    type: Date,
+    default: Date.now
+  },
   type: Number,
   week: Number,
-  promulgatorMeta: {
-    id: Number
-  },
+  promulgatorId: String,
   fileEntry: {
     allowable: Boolean,
     maxSize: Number,
-    nameRegExp: RegExp,
+    nameRegExp: String
   }
 });
 

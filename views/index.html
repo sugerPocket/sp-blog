@@ -4,17 +4,18 @@
 <link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css">
 <link rel="stylesheet" href="/bower_components/simplemde/dist/simplemde.min.css">
 <link rel="stylesheet" href="/bower_components/highlight/src/styles/default.css">
+<link rel="stylesheet" href="/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
 <link rel="stylesheet" href="/app/app.css">
 <link rel="stylesheet" href="/app/assignment/assignment.css">
-<link rel="stylesheet" href="/app/blog/blog.css">
 <link rel="stylesheet" href="/app/self/style.css">
+<link rel="stylesheet" href="/app/blog/blog.css">
 <link rel="stylesheet" href="/app/assignment/list/style.css">
 <link rel="stylesheet" href="/app/assignment/new/style.css">
 <link rel="stylesheet" href="/app/assignment/oneAssignment/style.css">
-<link rel="stylesheet" href="/app/blog/list/style.css">
 <link rel="stylesheet" href="/app/self/auth/style.css">
 <link rel="stylesheet" href="/app/self/header/style.css">
 <link rel="stylesheet" href="/app/self/side-menu/style.css">
+<link rel="stylesheet" href="/app/blog/list/style.css">
 <!-- endinject --></head><body><ng-include src="'/includes/side-menu'"></ng-include><ng-include src="'/includes/header'"></ng-include><ng-include src="'/includes/auth'"></ng-include><div id="sp-content" ng-class="{&quot;explanded&quot;: contentExpanded}" class="sp-content"><section ui-view class="test"></section></div></body><!-- inject:js -->
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/bower_components/angular-route/angular-route.js"></script>
@@ -25,31 +26,34 @@
 <script src="/bower_components/angular-animate/angular-animate.js"></script>
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/bower_components/moment/min/moment.min.js"></script>
+<script src="/bower_components/moment/min/moment-with-locales.min.js"></script>
 <script src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 <script src="/bower_components/codemirror/lib/codemirror.js"></script>
 <script src="/bower_components/simplemde/dist/simplemde.min.js"></script>
 <script src="/bower_components/marked/lib/marked.js"></script>
 <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+<script src="/bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
 <script src="/bower_components/angular-md/dist/angular-md.min.js"></script>
 <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
 <script src="/bower_components/highlight/src/highlight.js"></script>
 <script src="/app/app.js"></script>
 <script src="/app/assignment/assignment.js"></script>
-<script src="/app/blog/blog.js"></script>
 <script src="/app/self/self.js"></script>
+<script src="/app/blog/blog.js"></script>
 <script src="/app/assignment/configs/router.js"></script>
 <script src="/app/assignment/list/controller.js"></script>
 <script src="/app/assignment/new/controller.js"></script>
 <script src="/app/assignment/oneAssignment/controller.js"></script>
 <script src="/app/assignment/self/controller.js"></script>
-<script src="/app/blog/configs/router.js"></script>
-<script src="/app/blog/list/controller.js"></script>
-<script src="/app/blog/self/controller.js"></script>
 <script src="/app/self/auth/controller.js"></script>
 <script src="/app/self/configs/router.js"></script>
+<script src="/app/self/directive/sugerpocketDatepicker.js"></script>
 <script src="/app/self/directive/sugerpocketMde.js"></script>
 <script src="/app/self/header/controller.js"></script>
 <script src="/app/self/service/sugerpocketRoute.js"></script>
 <script src="/app/self/side-menu/controller.js"></script>
+<script src="/app/blog/configs/router.js"></script>
+<script src="/app/blog/list/controller.js"></script>
+<script src="/app/blog/self/controller.js"></script>
 <!-- endinject --></html>

@@ -9,7 +9,13 @@
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          .btn-group.navbar-right
+          .user-ctrls.navbar-right(ng-show='vm.isLogin')
+            a.navbar-brand(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') {{ vm.nickname }}
+            ul.dropdown-menu(role='menu' aria-labelledby="authMenu")
+              li.dropdown-header(role="presentation") User
+              li
+                a(href='#' ng-click='vm.logout()') Log out
+          .auth-ctrls.btn-group.navbar-right(ng-show='!vm.isLogin')
             button.btn.sp-navbar-button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
               span.glyphicon.glyphicon-user
               span.caret

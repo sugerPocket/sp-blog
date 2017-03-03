@@ -24,8 +24,6 @@
     function spMdeLink(scope, iElement, iAttrs, ngModel) {
       let modelName = iAttrs.ngModel;
       let mde = new SimpleMDE(iElement[0]);
-      console.log(scope.onLoad);
-      console.log(iAttrs);
       if (angular.isFunction(scope.onLoad)) {
         scope.onLoad(mde);
       }

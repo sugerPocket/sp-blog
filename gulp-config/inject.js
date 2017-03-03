@@ -79,7 +79,8 @@ function getCssFiles(files) {
     './public/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
     './public/bower_components/codemirror/lib/codemirror.css',
     './public/bower_components/simplemde/dist/simplemde.min.css',
-    './public/bower_components/highlight/src/styles/default.css'
+    './public/bower_components/highlight/src/styles/default.css',
+    './public/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css'
   ];
 
   return cssFiles.concat(files);
@@ -96,12 +97,14 @@ function getJsFiles(files) {
     './public/bower_components/angular-animate/angular-animate.js',
     './public/bower_components/jquery/dist/jquery.min.js',
     './public/bower_components/bootstrap/dist/js/bootstrap.js',
-    './public/bower_components/moment/min/moment.min.js',
+    './public/bower_components/moment/min/moment-with-locales.min.js',
     './public/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
     './public/bower_components/codemirror/lib/codemirror.js',
     './public/bower_components/simplemde/dist/simplemde.min.js',
     './public/bower_components/marked/lib/marked.js',
     './public/bower_components/angular-ui-router/release/angular-ui-router.js',
+    './public/bower_components/angular-file-upload/dist/angular-file-upload.min.js',
+    './public/bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
     './public/bower_components/angular-md/dist/angular-md.min.js',
     './public/bower_components/angular-mocks/angular-mocks.js',
     './public/bower_components/highlight/src/highlight.js'

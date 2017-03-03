@@ -25,7 +25,7 @@
       .new-assignment-toolbar.pull-left
         a(href='#' data-toggle='modal' data-target='#file-entry-config').fa.fa-file
       .new-assignment-ctrls.pull-right
-        a(href='#') Publish
+        a(href='#' ng-click='vm.create()') Publish
         a(href='#') Return
     .new-assignment-body
       form.form-inline.editor.pull-left(role='form')
@@ -40,7 +40,7 @@
         .form-group
           label.control-label.ddl-label DDL
           .input-group.date.datepicker
-            input.form-control(name='ddl' data-format="dd/MM/yyyy hh:mm:ss" type="text")
+            input.picker.form-control(name='ddl' ng-model='vm.ddl' type="text")
             span.input-group-addon
               span.fa.fa-calendar
         textarea(sp-mde ng-model='vm.assignmentContent' on-load='vm.configEditorSize()')
