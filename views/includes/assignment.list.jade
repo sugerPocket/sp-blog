@@ -15,6 +15,6 @@
               img.img-responsive.minihead(ng-src='/images/header.jpeg')
               span.author-name {{ assignment.promulgatorMeta.nickname }}
             .ddl.clearfix
-              h5.start.pull-left start: {{ assignment.start | date: 'yyyy/MM/dd HH:mm' }}
-              h5.end.pull-right End at {{ assignment.ddl | date: 'yyyy/MM/dd HH:mm' }}
+              h5.start start: {{ assignment.start | date: 'yyyy/MM/dd HH:mm' }}
+              h5.end End: {{ assignment.ddl | date: 'yyyy/MM/dd HH:mm' }}
     .assignment-list-footer

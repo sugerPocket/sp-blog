@@ -71,7 +71,7 @@
         else if (result.status) error(result);
         else {
           Notification.error('发生未知错误');
-        };
+        }
       };
 
       uploader.onCompleteAll = () => {
