@@ -150,7 +150,7 @@ function getAllAssignments(req) {
     });
 
     yield new Promise((resolve, reject) => {
-      db.assignment.find({}, (err, docs) => {
+      db.assignment.find({}).sort({'_id': -1}).exec((err, docs) => {
         if (err) {
           result.status = 'DATABASE_ERROR';
           result.msg = '数据库出现未知错误';

@@ -38,9 +38,6 @@ bower_components
 .node_repl_history
 
 # images
-*.jpeg
-*.jpg
-*.png
 
 #app
 app

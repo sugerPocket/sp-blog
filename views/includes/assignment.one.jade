@@ -6,6 +6,8 @@
       md(ng-model='vm.content')
     .one-assignment-footer.clearfix(ng-if='vm.fileEntry.allowable')
       h2 File Entry
+        small &nbsp;&nbsp;max size : {{vm.fileEntry.maxSize}} MB
+        small &nbsp;&nbsp;(请打包成.zip压缩文件，否则后果自负)
       table.table
         thead
           tr
