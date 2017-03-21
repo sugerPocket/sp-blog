@@ -20,6 +20,7 @@
       function success(result) {
         vm.assignmentsList = result.data.map(item => {
           return {
+            aid: item.aid,
             promulgatorMeta: item.promulgatorMeta,
             ddl: new Date(item.ddl),
             start: new Date(item.start),
@@ -63,7 +64,6 @@
     function initVariable() {
       vm.assignmentsList = [];
       vm.now = new Date();
-      console.log(vm.now);
     }
 
     //////////////使用参数初始化变量
