@@ -22,10 +22,10 @@ angular
           templateUrl: 'includes/assignment.one'
         });
 
-      function goDefault($state) {
-        $state.go('assignment.list');
+      function goDefault($location) {
+        $location.replace().path('/assignment/list');
       }
 
-      $urlRouterProvider.when('/assignment', ['$state', goDefault]);
-      $urlRouterProvider.when('/assignment/', ['$state', goDefault]);
+      $urlRouterProvider.when('/assignment', ['$location', goDefault]);
+      $urlRouterProvider.when('/assignment/', ['$location', goDefault]);
     }]);

@@ -35,7 +35,7 @@ gulp.task('lint:gulp', function () {
 gulp.task('lint:fe', function () {
 
   let options = getEslintOptions('fe');
-  let source = ['./blog-fe/**/*.js'];
+  let source = ['./sugerpocket-fe/**/*.js'];
 
   return getEslintPipeStream(source, options);
 

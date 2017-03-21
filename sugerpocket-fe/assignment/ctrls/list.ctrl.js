@@ -6,9 +6,9 @@
     .module('sugerpocket.assignment')
     .controller('assignmentListCtrl', assignmentListCtrl);
 
-  assignmentListCtrl.$inject = ['$scope', '$resource', '$state', 'Notification'];
+  assignmentListCtrl.$inject = ['$scope', '$resource', '$state', 'Notification', '$timeout'];
 
-  function assignmentListCtrl($scope, $resource, $state, Notification) {
+  function assignmentListCtrl($scope, $resource, $state, Notification, $timeout) {
     const vm = this;
 
     activate();
@@ -18,7 +18,18 @@
       let data = {};
 
       function success(result) {
-        vm.assignmentsList = result.data;
+        vm.assignmentsList = result.data.map(item => {
+          return {
+            promulgatorMeta: item.promulgatorMeta,
+            ddl: new Date(item.ddl),
+            start: new Date(item.start),
+            title: item.title,
+            type: item.type,
+            week: item.week
+          };
+        });
+
+        $timeout(() => vm.listAfterLoad = true, 500);
       }
 
       function error(err) {
@@ -51,6 +62,8 @@
     //////////////初始化变量
     function initVariable() {
       vm.assignmentsList = [];
+      vm.now = new Date();
+      console.log(vm.now);
     }
 
     //////////////使用参数初始化变量

@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   resave: true, // don't save session if unmodified  
   saveUninitialized: false, // don't create session until something stored
-  cookie: { maxAge: 300000 },
+  cookie: { maxAge: 3000000 },
   secret: 'sugerpocket'
 }));
 

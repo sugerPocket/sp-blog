@@ -75,7 +75,6 @@
       };
 
       uploader.onCompleteAll = () => {
-        console.log(uploader.queue);
         $scope.$digest();
       };
 

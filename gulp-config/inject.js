@@ -75,12 +75,12 @@ function startInject(files) {
 
 function getCssFiles(files) {
   let cssFiles = [
-    './public/bower_components/bootstrap/dist/css/bootstrap.css',
-    './public/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-    './public/bower_components/codemirror/lib/codemirror.css',
-    './public/bower_components/simplemde/dist/simplemde.min.css',
-    './public/bower_components/highlight/src/styles/default.css',
-    './public/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css'
+    'http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
+    'http://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css',
+    'http://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.css',
+    'http://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css',
+    'http://cdn.bootcss.com/highlight.js/9.10.0/styles/default.min.css',
+    'http://cdn.bootcss.com/angular-ui-notification/0.3.6/angular-ui-notification.min.css'
   ];
 
   return cssFiles.concat(files);
@@ -88,26 +88,8 @@ function getCssFiles(files) {
 
 function getJsFiles(files) {
   let jsFiles = [
-    './public/bower_components/angular/angular.js',
-    './public/bower_components/angular-route/angular-route.js',
-    './public/bower_components/angular-cookies/angular-cookies.js',
-    './public/bower_components/angular-loader/angular-loader.js',
-    './public/bower_components/angular-resource/angular-resource.js',
-    './public/bower_components/angular-sanitize/angular-sanitize.js',
-    './public/bower_components/angular-animate/angular-animate.js',
-    './public/bower_components/jquery/dist/jquery.min.js',
-    './public/bower_components/bootstrap/dist/js/bootstrap.js',
-    './public/bower_components/moment/min/moment-with-locales.min.js',
-    './public/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-    './public/bower_components/codemirror/lib/codemirror.js',
-    './public/bower_components/simplemde/dist/simplemde.min.js',
-    './public/bower_components/marked/lib/marked.js',
-    './public/bower_components/angular-ui-router/release/angular-ui-router.js',
-    './public/bower_components/angular-file-upload/dist/angular-file-upload.min.js',
-    './public/bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
     './public/bower_components/angular-md/dist/angular-md.min.js',
-    './public/bower_components/angular-mocks/angular-mocks.js',
-    './public/bower_components/highlight/src/highlight.js'
+    './public/bower_components/angular-mocks/angular-mocks.js'
   ];
 
   return jsFiles.concat(files);
