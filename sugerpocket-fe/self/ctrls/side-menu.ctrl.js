@@ -23,6 +23,7 @@
     function initVariable() {
       vm.expanded = false;
       vm.activeTab = 'blog';
+      vm.$state = $state;
     }
 
     //////////////使用参数初始化变量

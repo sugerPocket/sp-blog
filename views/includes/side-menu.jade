@@ -3,15 +3,15 @@
     .sp-side-header
     .sp-side-body
       ul.list-group
-        li.list-group-item(ng-class='{ "active": $state.includes("home") }')
+        li.list-group-item(ng-class='{ "active": vm.$state.includes("home") }')
           a.list-link
             span.item-text Home
-        li.list-group-item(ng-class='{ "active": $state.includes("blog") }')
+        li.list-group-item(ng-class='{ "active": vm.$state.includes("blog") }')
           a.list-link(ui-sref='blog')
             span.item-text Blog
-        li.list-group-item(ng-class='{ "active": $state.includes("assignment") }')
+        li.list-group-item(ng-class='{ "active": vm.$state.includes("assignment") }')
           a.list-link(ui-sref='assignment')
             span.item-text Assignments
-        li.list-group-item(ng-class='{ "active": $state.includes("todo") }')
+        li.list-group-item(ng-class='{ "active": vm.$state.includes("todo") }')
           a.list-link
             span.item-text Todo
