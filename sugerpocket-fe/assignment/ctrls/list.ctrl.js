@@ -30,7 +30,7 @@
           };
         });
 
-        $timeout(() => vm.listAfterLoad = true, 500);
+        $timeout(() => vm.listAfterLoad = true, 100);
       }
 
       function error(err) {
