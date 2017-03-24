@@ -5,7 +5,7 @@
     .module('sugerpocket')
     .directive('spMde', spMdeDrct);
     
-  spMdeDrct.$injector = ['$parse'];
+  spMdeDrct.$inject = ['$parse'];
   function spMdeDrct($parse) {
 
     return {
