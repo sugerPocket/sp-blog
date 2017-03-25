@@ -11,7 +11,7 @@ gulp.task('watch', gulpsync.sync(['watch:fe', 'browser']));
 //前端
 gulp.task('watch:fe', function () {
   let watchList = [
-    './sugerpocket-fe/**/*.*',
+    './client/**/*.*',
     './views/*.jade',
     './views/**/*.jade'
   ];

@@ -14,14 +14,14 @@ gulp.task('compile:pro', gulpsync.sync(['clean:code', 'sass', 'babel']));
 gulp.task('compile:dev', gulpsync.sync(['clean:code', 'lint', 'sass', 'babel']));
 
 gulp.task('sass', function () {
-  return gulp.src('./sugerpocket-fe/**/*.sass')
+  return gulp.src('./client/**/*.sass')
     .pipe(sass({ outputStyle: 'expanded' })
       .on('error', sass.logError))
     .pipe(gulp.dest('./public/app'));
 });
 
 gulp.task('babel', function () {
-  return gulp.src('./sugerpocket-fe/**/*.js')
+  return gulp.src('./client/**/*.js')
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./public/app'));
 });
