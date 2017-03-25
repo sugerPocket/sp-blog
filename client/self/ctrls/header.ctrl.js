@@ -18,9 +18,9 @@
       if ($window.innerWidth < 767) vm.navTransparent = false;
       else vm.navTransparent = true;
       $window.onscroll = () => {
-        let edge = 400;
-        if ($window.innerWidth < 1280) edge = 100;
-        if ($window.innerWidth < 767) edge = 0;
+        let edge = 50;
+        //if ($window.innerWidth < 1280) edge = 100;
+        //if ($window.innerWidth < 767) edge = 0;
         if ($window.scrollY < edge) {
           if (!vm.navTransparent) {
             vm.navTransparent = true;

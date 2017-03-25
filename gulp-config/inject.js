@@ -79,7 +79,7 @@ function getCssFiles(files) {
     'http://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css',
     'http://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.css',
     'http://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css',
-    'http://cdn.bootcss.com/highlight.js/9.10.0/styles/default.min.css',
+    'http://cdn.bootcss.com/highlight.js/9.10.0/styles/monokai-sublime.min.css',
     'http://cdn.bootcss.com/angular-ui-notification/0.3.6/angular-ui-notification.min.css'
   ];
 

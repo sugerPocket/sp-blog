@@ -11,13 +11,15 @@ html(ng-app="sugerpocket")
     link(rel='stylesheet' href='http://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css' type='text/css')
     link(rel='stylesheet' href='http://cdn.bootcss.com/codemirror/5.24.2/codemirror.min.css' type='text/css')
     link(rel='stylesheet' href='http://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css' type='text/css')
-    link(rel='stylesheet' href='http://cdn.bootcss.com/highlight.js/9.10.0/styles/default.min.css' type='text/css')
+    link(rel='stylesheet' href='http://cdn.bootcss.com/highlight.js/9.10.0/styles/monokai.min.css' type='text/css')
     link(rel='stylesheet' href='http://cdn.bootcss.com/angular-ui-notification/0.3.6/angular-ui-notification.min.css' type='text/css')
     <!-- inject:css -->
     <!-- endinject -->
 
   body
     block body
+  script(src='http://cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js')
+  script hljs.initHighlightingOnLoad();
   script(src='http://cdn.bootcss.com/angular.js/1.6.2/angular.min.js')
   script(src='http://cdn.bootcss.com/angular.js/1.6.1/angular-cookies.min.js')
   script(src='http://cdn.bootcss.com/angular.js/1.6.2/angular-loader.min.js')
@@ -34,6 +36,5 @@ html(ng-app="sugerpocket")
   script(src='http://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js')
   script(src='http://cdn.bootcss.com/angular-file-upload/2.5.0/angular-file-upload.min.js')
   script(src='http://cdn.bootcss.com/angular-ui-notification/0.3.6/angular-ui-notification.js')
-  script(src='http://cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js')
   <!-- inject:js -->
   <!-- endinject -->

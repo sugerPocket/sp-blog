@@ -1,38 +1,54 @@
 #sp-blog
   .blog-head
     position: relative
-    &:before
-      content: ''
-      position: absolute
-      display: block
-      height: 100%
-      width: 100%
-      opacity: 0.2
-      background: #000
-  .blog-head-content
-    position: absolute
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
     width: 100%
-    top: 50%
-    transform: translateY(-50%)
+    height: 360px
+    background: linear-gradient(to bottom right, #2C3E50, #FD746C, #FF8235, #ffff1c, #92FE9D, #00C9FF, #a044ff, #e73827)
+    background-repeat: no-repeat
+    background-size: 1000% 1000%
+    animation: gradient 240s ease infinite
+
+
+  .blog-head-content
+    padding: 0
+    margin: 0
     color: white
+    font-family: Arial, Helvetica, sans-serif
     text-align: left
+    position: absolute
+    top: 50%
+    left: 50%
+    min-width: 50%
+    transform: translate(-50%, -50%)
+    @media (max-width: 768px)
+      text-align: center
     h1
-      font-weight: bold
-      text-align: center
-      @media (min-width: 992px)
-        font-size: 96px
-      @media (max-width: 992px)
-        font-size: 60px
-      @media (max-width: 762px)
-        font-size: 25px
-    h2
-      margin-top: 0px
-      text-align: center
-      @media (min-width: 992px)
-        font-size: 56px
-      @media (max-width: 992px)
-        font-size: 32px
-      @media (max-width: 762px)
-        font-size: 16px
+      display: inline-block
+      background: #aaa
+      padding-left: 10px
+      padding-right: 10px
+      border-right: 10px solid transparent
+      border-left: 10px solid #df0086
+      font-size: 100px
+      @media (max-width: 768px)
+        font-size: 48px
+        background: transparent
+        
+
+      
+  @keyframes gradient 
+    0%
+      background-position: 0% 0%
+    50%
+      background-position: 100% 100%
+    100%
+      background-position: 0% 0%
+
+  .blog-head
+    position: relative
     hr
       float: none
