@@ -6,17 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var index = require('./routes/index');
-var api = require('./routes/api');
+var assignment = require('./routes/assignment');
 var auth = require('./routes/auth');
-var user = require('./routes/api/user');
-var blog = require('./routes/api/blog');
-var assignment = require('./routes/api/assignment');
+var user = require('./routes/user');
+var index = require('./routes/index');
 
-var app = express();
+var app = require('./config');
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
@@ -25,7 +23,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('../public'));
 app.use(session({
   resave: true, // don't save session if unmodified  
   saveUninitialized: false, // don't create session until something stored
@@ -35,10 +33,7 @@ app.use(session({
 
 app.use('/', index);
 app.use('/auth', auth);
-app.use('/api', api);
-app.use('/api/user', user);
 app.use('/api/assignment', assignment);
-app.use('/api/blog', blog);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
