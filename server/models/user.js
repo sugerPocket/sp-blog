@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const co = require('co');
 
 let userSchema = new Schema({
   username: {
@@ -11,8 +12,15 @@ let userSchema = new Schema({
   email: {
     type: String 
   },
-  password: String,
-  role: Boolean
+  password: {
+    type: String,
+    require: true
+  },
+  role: {
+    type: Boolean,
+    required: true,
+    default: false
+  }
 });
 
 let userModel = mongoose.model('user', userSchema);
@@ -30,14 +38,31 @@ function retrieveOneUser(username) {
   return userModel.findOne(query).select(select).exec();
 }
 
-function isRedifined(user) {
+function * isRedefined(user) {
   const query = { '$or': [{ username: user.username }, { email: user.email }] };
 
-  return userModel.findOne(query).exists().exec();
+  let result = yield userModel.findOne(query).exec();
+  
+  return !(result === null);
+}
+
+function * updateOneUser(uid, update) {
+  const query = { '_id': uid };
+  const select = '_id username nickname password';
+
+  return userModel.update(query, { $set: update }).select(select).exec();
+}
+
+function * removeOneUser(username) {
+  const query = { '_id': uid };
+
+  return userModel.remove(query).exec();
 }
 
 module.exports = {
-  createOneUser,
-  retrieveOneUser,
-  isRedifined
+  createOne   : createOneUser,
+  getOne      : retrieveOneUser,
+  updateOne   : updateOneUser,
+  removeOne   : removeOneUser,
+  isRedefined : co.wrap(isRedefined),
 };

@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get(/^((?!(includes|api|auth|files|app|bower_components)).)*$/, function(req, res, next) {
+router.get(/^((?!(includes|api|auth|files)).)*$/, function(req, res, next) {
+  console.log({ root: __dirname.substr(0, __dirname.lastIndexOf('/')) + '/../views'});
   res.sendFile('/index.html', { root: __dirname.substr(0, __dirname.lastIndexOf('/')) + '/../views'});
 });
 

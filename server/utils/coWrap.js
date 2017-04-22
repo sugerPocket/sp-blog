@@ -1,5 +1,10 @@
 const co = require('co');
 
+/** function co 包装
+ *
+ * @param {Object} obj
+ * @return {Object} 包装之后的对象
+ */
 function wrapObj(obj) {
   let result = {};
   for (let key in obj) {

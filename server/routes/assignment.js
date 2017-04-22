@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const assignmentValidator = require('../middwares/validators/assignment.valid');
+const assignmentValidator = require('../middlewares/validators/assignment.valid');
 const ctrl = require('../controllers/assignment.ctrl');
 
 router.get('/one/:assignmentId', ctrl.retrieveOneAssignment);
