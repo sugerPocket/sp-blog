@@ -28,6 +28,7 @@ let assignmentSchema = new Schema({
   },
   promulgatorId: {
     type: Schema.Types.ObjectId,
+    required: true,
     ref: 'user'
   },
   fileEntry: {

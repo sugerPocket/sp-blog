@@ -7,6 +7,7 @@ const co = require('co');
 const { user } = require('../models');
 const { handleError, sendData, fieldsSelect, fieldsRename, coWrap } = require('../utils');
 
+const profileDir = '/profiles';
 /** 修改 profile 的接口（只允许修改昵称和密码
  * 
  * @param {Request} req
@@ -32,6 +33,18 @@ function * updateProfile(req, res, next) {
   }
 
   return sendData(req, res, 'OK', result, '修改成功');
+}
+
+/**获取头像(暂时不做)
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ * @param {function} next 
+ */
+function * getAvatar(req, res, next) {
+  let username = req.session.username;
+  
+  
 }
 
 /** 上传头像 (暂时不做)

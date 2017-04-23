@@ -34,6 +34,7 @@ function * retrieveOneAssignment(req, res, next) {
 
 function * createOneAssignment(req, res, next) {
   let newAssignment = req.body;
+  newAssignment.promulgatorId = req.session.userMeta.uid;
   let result = {};
 
   try {
@@ -43,7 +44,7 @@ function * createOneAssignment(req, res, next) {
     return handleError(req, res, 'DATABASE_ERROR', e, '数据库错误，请联系管理员');
   }
   
-  result = assignmentDocPicker(result._doc);
+  result = assignmentDocPicker(result[0]._doc);
 
   return sendData(req, res, 'OK', result, '创建任务成功');
 }
@@ -94,6 +95,6 @@ function assignmentDocPicker(doc) {
   let result = Object.assign({}, doc);
 
   result = fieldsRename(result, { 'promulgatorId' : 'promulgatorMeta', '_id' : 'aid' });
-  result.promulgatorMeta = fieldsRename(result.promulgatorMeta._doc, { '_id' : 'uid' });
+  if (result.promulgatorMeta && result.promulgatorMeta._doc) result.promulgatorMeta = fieldsRename(result.promulgatorMeta._doc, { '_id' : 'uid' });
   return result;
 }
