@@ -80,6 +80,19 @@ function * editOneAssignment(req, res, next) {
   return sendData(req, res, 'OK', result, '修改成功');
 }
 
+function * deleteOneAssignment(req, res, next) {
+  let aid = req.params.assignmentId;
+
+  try {
+    result = yield assignment.removeOne(aid);
+  }
+  catch (e) {
+    return handleError(req, res, 'DATABASE_ERROR', e, '数据库错误，请联系管理员');
+  }
+
+  return sendData(req, res, 'OK', null, '删除成功');
+}
+
 module.exports = coWrap({
   retrieveAllAssignments,
   retrieveOneAssignment,
