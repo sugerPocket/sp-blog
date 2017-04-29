@@ -8,13 +8,17 @@ let userSchema = new Schema({
     required: true,
     unique: true
   },
-  nickname: String,
+  nickname: {
+    type: String,
+    required: true,
+  },
   email: {
-    type: String 
+    type: String,
+    required: true
   },
   password: {
     type: String,
-    require: true
+    required: true
   },
   role: {
     type: Boolean,
@@ -31,9 +35,12 @@ function createOneUser(user) {
   return userModel.create([user]);
 }
 
-function retrieveOneUser(username) {
-  const query = { 'username': username };
-  const select = '_id username nickname password';
+function retrieveOneUser(username, uid) {
+  const query = {};
+  if (username) query.username = username;
+  else if (uid) query._id = uid;
+  
+  const select = '_id username nickname password email role';
 
   return userModel.findOne(query).select(select).exec();
 }
@@ -46,17 +53,23 @@ function * isRedefined(user) {
   return !(result === null);
 }
 
-function * updateOneUser(uid, update) {
-  const query = { '_id': uid };
-  const select = '_id username nickname password';
+function updateOneUser(uid, update) {
+  const select = '_id username nickname password email role';
 
-  return userModel.update(query, { $set: update }).select(select).exec();
+  return userModel.findByIdAndUpdate(uid, { $set: update }).select(select).exec();
 }
 
-function * removeOneUser(username) {
-  const query = { '_id': uid };
+function removeOneUser(uid) {
+  const select = '_id username nickname password email role';
 
-  return userModel.remove(query).exec();
+  return userModel.findByIdAndRemove(uid).select(select).exec();
+}
+
+function getAllUser() {
+  const query = {};
+  const select = '_id username nickname role';
+
+  return userModel.find(query).select(select).exec();
 }
 
 module.exports = {
@@ -64,5 +77,6 @@ module.exports = {
   getOne      : retrieveOneUser,
   updateOne   : updateOneUser,
   removeOne   : removeOneUser,
+  getAll      : getAllUser,
   isRedefined : co.wrap(isRedefined),
 };

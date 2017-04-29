@@ -4,5 +4,6 @@ const adminJudger = require('./adminJudger');
 
 module.exports = {
   loginJudger,
-  registerJudger
+  registerJudger,
+  adminJudger,
 };

@@ -4,6 +4,7 @@ const index = require('../routes/index');
 const assignment = require('../routes/assignment');
 const auth = require('../routes/auth');
 const user = require('../routes/user');
+const admin = require('../routes/admin');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -35,6 +36,7 @@ app.use('/auth', auth);
 app.use('/api', loginJudger);
 app.use('/api/assignment', assignment);
 app.use('/api/user', user);
+app.use('/api/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

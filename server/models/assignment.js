@@ -12,10 +12,12 @@ let assignmentSchema = new Schema({
   },
   start: {
     type: Date,
+    required: true,
     default: Date.now
   },
   ddl: {
     type: Date,
+    required: true,    
     default: Date.now
   },
   type: {
@@ -55,7 +57,8 @@ const populate = {
   select: '' +
     'username ' +
     'userMeta ' +
-    'nickname'
+    'nickname ' +
+    'role'
 };
 
 let assignmentModel = mongoose.model('assignment', assignmentSchema);
@@ -79,15 +82,14 @@ function getOneAssignment(assignmentId) {
 }
 
 function updateOneAssignment(assignmentId, newAssignment) {
-  let query = { $set: { _id: assignmentId } };
+  let update = { $set: newAssignment };
 
-  return assignmentModel.update(query, newAssignment).populate(populate).select(select).exec();
+  return assignmentModel.findByIdAndUpdate(assignmentId, update).populate(populate).select(select).exec();
 }
 
 function removeOneAssignment(assignmentId) {
-  let query = { _id: assignmentId };
 
-  return assignmentModel.remove(query).exec();
+  return assignmentModel.findByIdAndRemove(assignmentId).populate(populate).select(select).exec();
 }
 
 exports = module.exports = {
