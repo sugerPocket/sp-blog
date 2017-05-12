@@ -65,7 +65,6 @@ function * getAvatar(req, res, next) {
   try {
     for (let i = 0; i < avatarTypes.length; i++) {
       let tempPath = `${fileDir}${profileDir}${uid}/${uid}.${avatarTypes[i]}`;
-      console.log(tempPath);
       if (yield fs.exists(tempPath)) {
         avatarPath = tempPath;
       }
