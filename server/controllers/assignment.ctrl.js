@@ -74,6 +74,7 @@ function * editOneAssignment(req, res, next) {
 
   try {
     result = yield assignment.updateOne(aid, newAssignment);
+    result = yield assignment.getOne(aid);
   }
   catch (e) {
     return handleError(req, res, 'DATABASE_ERROR', e, '数据库错误，请联系管理员');

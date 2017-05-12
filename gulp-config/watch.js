@@ -37,7 +37,7 @@ gulp.task('watch:fe', function () {
 gulp.task('browser', function() {
 
   browserSync.init({
-    proxy: 'http://localhost:3002'
+    proxy: 'http://localhost:3005'
   });
 
 });

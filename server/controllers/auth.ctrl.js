@@ -55,7 +55,7 @@ function * logInOneUser(req, res, next) {
   catch (e) {
     return handleError(req, res, 'DATABASE_ERROR', e, '数据库出错，请联系管理员');
   }
-  if (data.password !== userMeta.password)
+  if (!userMeta || data.password !== userMeta.password)
     return sendData(req, res, 'AUTHENTICATION_ERROR', null, '用户名或者密码错误');
   userMeta = fieldsSelect(userMeta, '_id username nickname role');
   userMeta = fieldsRename(userMeta, { '_id': 'uid' });

@@ -67,7 +67,7 @@ function removeOneUser(uid) {
 
 function getAllUser() {
   const query = {};
-  const select = '_id username nickname role';
+  const select = '_id username nickname role email';
 
   return userModel.find(query).select(select).exec();
 }

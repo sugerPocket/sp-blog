@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get(/^((?!(includes|api|auth|files)).)*$/, function(req, res, next) {
-  console.log({ root: __dirname.substr(0, __dirname.lastIndexOf('/')) + '/../views'});
-  res.sendFile('/index.html', { root: __dirname.substr(0, __dirname.lastIndexOf('/')) + '/../views'});
+  res.sendFile('/index.html', { root: __dirname.substr(0, __dirname.lastIndexOf('/')) + '../../views'});
 });
 
 router.get('/includes/:name', function (req, res) {

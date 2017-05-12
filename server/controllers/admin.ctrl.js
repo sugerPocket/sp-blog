@@ -58,7 +58,7 @@ function * getAllUsers(req, res, next) {
     return handleError(req, res, 'DATABASE_ERROR', e, '数据库错误，请联系管理员');
   }
 
-  result = result.map(item => fieldsSelect(fieldsRename(item._doc, { '_id' : 'uid' }), 'uid username nickname role'));
+  result = result.map(item => fieldsSelect(fieldsRename(item._doc, { '_id' : 'uid' }), 'uid username nickname email role'));
 
   return sendData(req, res, 'OK', result, '获取所有用户展示信息成功');
 }
@@ -82,6 +82,7 @@ function * updateOneUser(req, res, next) {
 
   try {
     result = yield user.updateOne(uid, update);
+    result = yield user.getOne(null, uid);
   }
   catch (e) {
     return handleError(req, res, 'DATABASE_ERROR', e, '数据库错误，请联系管理员');
