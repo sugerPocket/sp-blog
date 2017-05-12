@@ -10,8 +10,14 @@ const { handleError, sendData, fieldsSelect, fieldsRename, coWrap } = require('.
 const imageMagick = require('imagemagick');
 const fs = require('fs-promise');
 const { file } = require('../service');
+const url = require('url');
+const path = require('path');
 
-const profileDir = '/profiles';
+const profileDir = 'profiles/';
+const fileDir = 'files/';
+
+const avatarTypes = ['jpg', 'jpeg', 'png'];
+
 /** 修改 profile 的接口（只允许修改昵称和密码
  * 
  * @param {Request} req
@@ -53,7 +59,26 @@ function * updateProfile(req, res, next) {
  * @param {function} next 
  */
 function * getAvatar(req, res, next) {
-  
+  const { uid } = url.parse(req.url, true).query;
+  let avatarPath = '';
+  let root = path.join(__dirname + '/../../');
+  try {
+    for (let i = 0; i < avatarTypes.length; i++) {
+      let tempPath = `${fileDir}${profileDir}${uid}/${uid}.${avatarTypes[i]}`;
+      console.log(tempPath);
+      if (yield fs.exists(tempPath)) {
+        avatarPath = tempPath;
+      }
+    }
+  }
+  catch (e) {
+    res.sendFile('public/images/header.jpeg' , { root });
+  }
+
+  if (avatarPath)
+    res.sendFile(avatarPath, { root });
+  else
+    res.sendFile('public/images/header.jpeg' , { root });
 }
 
 /** 上传头像 (暂时不做)
@@ -69,9 +94,14 @@ function * uploadAvatar(req, res, next) {
       type = '';
       
   try {
-    path = yield file.save(req, '/profiles/' + uid, null, true);
+    path = yield file.save(req, `/${profileDir}${uid}`, null, true);
     type = req.file[0].originalFilename.split('.')[1];
-    result = yield resizeAvatar(path, './files/profiles/' + uid + '.' + type);
+    if (avatarTypes.indexOf(type) === -1) {
+      result = yield fs.remove(path);
+      return sendData(req, res, 'BAD_DATA', result, '头像上传失败，必须为 png、jpg 或者 jpeg 格式图像');
+    }
+    result = yield resizeAvatar(path, `${fileDir}${profileDir}${uid}.${type}`);
+    result = yield fs.rename(req.file[0].path, path.substring(0, path.lastIndexOf('/') + 1) + uid + '.' + type);
   }
   catch (e) {
     return handleError(req, res, 'FILE_SERVICE_ERROR', e, '文件存储失败，请联系管理员');
@@ -84,9 +114,10 @@ function resizeAvatar(path, dist) {
   return new Promise((resolve, reject) => {
     imageMagick.resize({
       srcPath: path,
-      dstPath: dist,
-      width: 200,
-      height: 200,
+      dstPath: path,
+      width: 400,
+      height: 400,
+      quality: 60
     }, (err, stdout, stderr) => {
       if (err) reject(err);
       else resolve(stdout); 

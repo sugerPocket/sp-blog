@@ -30,7 +30,7 @@ function * registerOneUser(req, res, next) {
     return handleError(req, res, 'DATABASE_ERROR', e, '数据库出错，请联系管理员');
   }
 
-  userMeta = fieldsSelect(userMeta[0]._doc, '_id username nickname role');
+  userMeta = fieldsSelect(userMeta[0]._doc, '_id username nickname email role');
   userMeta = fieldsRename(userMeta, { '_id': 'uid' });
 
   return sendData(req, res, 'OK', userMeta, '注册成功');
@@ -57,7 +57,7 @@ function * logInOneUser(req, res, next) {
   }
   if (!userMeta || data.password !== userMeta.password)
     return sendData(req, res, 'AUTHENTICATION_ERROR', null, '用户名或者密码错误');
-  userMeta = fieldsSelect(userMeta, '_id username nickname role');
+  userMeta = fieldsSelect(userMeta, '_id username nickname email role');
   userMeta = fieldsRename(userMeta, { '_id': 'uid' });
 
   req.session.userMeta = userMeta;
@@ -76,7 +76,7 @@ function * logInOneUser(req, res, next) {
 function * authInit(req, res, next) {
   let userMeta = req.session.userMeta;
 
-  userMeta = fieldsSelect(userMeta, 'uid username nickname role');
+  userMeta = fieldsSelect(userMeta, 'uid username nickname email role');
 
   return sendData(req, res, 'OK', userMeta, '登录成功');
 }
