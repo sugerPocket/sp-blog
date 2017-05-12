@@ -98,16 +98,17 @@ function * uploadAvatar(req, res, next) {
     type = req.file[0].originalFilename.split('.')[1];
     if (avatarTypes.indexOf(type) === -1) {
       result = yield fs.remove(path);
-      return sendData(req, res, 'BAD_DATA', result, '头像上传失败，必须为 png、jpg 或者 jpeg 格式图像');
+      return sendData(req, res, 'BAD_DATA', false, '头像上传失败，必须为 png、jpg 或者 jpeg 格式图像');
     }
     result = yield resizeAvatar(path, `${fileDir}${profileDir}${uid}.${type}`);
+    yield co.wrap(removeAvatar)(uid);
     result = yield fs.rename(req.file[0].path, path.substring(0, path.lastIndexOf('/') + 1) + uid + '.' + type);
   }
   catch (e) {
     return handleError(req, res, 'FILE_SERVICE_ERROR', e, '文件存储失败，请联系管理员');
   }
 
-  return sendData(req, res, 'OK', result, '头像上传成功');
+  return sendData(req, res, 'OK', true, '头像上传成功');
 }
 
 function resizeAvatar(path, dist) {
@@ -123,6 +124,15 @@ function resizeAvatar(path, dist) {
       else resolve(stdout); 
     });
   });
+}
+
+function *removeAvatar(uid) {
+  for (let i = 0; i < avatarTypes.length; i++) {
+    let tempPath = `${fileDir}${profileDir}${uid}/${uid}.${avatarTypes[i]}`;
+    if (yield fs.exists(tempPath)) {
+      yield fs.remove(tempPath);
+    }
+  }
 }
 
 module.exports = coWrap({
